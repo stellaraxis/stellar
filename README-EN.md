@@ -27,17 +27,17 @@ Dual-stack positioning:
 
 ## Core Component Matrix
 
-| Domain | English Full Name | Chinese Full Name | Short Name | Responsibility |
-| :--- | :--- | :--- | :--- | :--- |
-| <nobr>Service discovery</nobr> | `StarMap` | `乾仪` | `乾` | service metadata, instance discovery, registration |
-| <nobr>Config center</nobr> | `Nebula` | `坤仪` | `坤` | dynamic configuration and environment distribution |
-| <nobr>Tracing</nobr> | `LightBeam` | `离鉴` | `离` | tracing, observability, request illumination |
-| <nobr>Governance</nobr> | `Orbit` | `巽策` | `巽` | routing, traffic governance, rollout control |
-| <nobr>Limiting and circuit breaking</nobr> | `Pulsar` | `艮闸` | `艮` | rate limiting, circuit breaking, overload protection |
-| <nobr>Distributed scheduling</nobr> | `Chronos` | `震策` | `震` | scheduling and distributed job execution |
-| <nobr>Distributed locking</nobr> | `Singularity` | `坎锁` | `坎` | exclusivity and concurrency control |
-| <nobr>Gateway</nobr> | `EventHorizon` | `兑门` | `兑` | ingress, boundary traffic, protocol aggregation |
-| <nobr>Messaging and event flow</nobr> | `TaiJi Flow` | `太极流` | `中枢` | messaging, event streaming, asynchronous decoupling |
+| Domain | English Full Name / Chinese Full Name | Short Name | Responsibility |
+| :--- | :--- | :--- | :--- |
+| <nobr>Service discovery</nobr> | `StarMap / 乾仪` | `乾` | service metadata, instance discovery, registration |
+| <nobr>Config center</nobr> | `Nebula / 坤仪` | `坤` | dynamic configuration and environment distribution |
+| <nobr>Tracing</nobr> | `LightBeam / 离鉴` | `离` | tracing, observability, request illumination |
+| <nobr>Governance</nobr> | `Orbit / 巽策` | `巽` | routing, traffic governance, rollout control |
+| <nobr>Limiting and circuit breaking</nobr> | `Pulsar / 艮闸` | `艮` | rate limiting, circuit breaking, overload protection |
+| <nobr>Distributed scheduling</nobr> | `Chronos / 震策` | `震` | scheduling and distributed job execution |
+| <nobr>Distributed locking</nobr> | `Singularity / 坎锁` | `坎` | exclusivity and concurrency control |
+| <nobr>Gateway</nobr> | `EventHorizon / 兑门` | `兑` | ingress, boundary traffic, protocol aggregation |
+| <nobr>Messaging and event flow</nobr> | `TaiJi Flow / 太极流` | `中枢` | messaging, event streaming, asynchronous decoupling |
 
 Recommended presentation style:
 
