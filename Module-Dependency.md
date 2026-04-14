@@ -18,7 +18,7 @@
 - Operator 依赖业务 SDK 或控制台前端代码，造成部署层与业务层缠绕。
 - 不同产品之间直接引用彼此内部实现，而不是通过协议或 SDK 通信。
 
-因此，这份文档的目标是定义 `Stellar Axis（两仪）` 体系下的仓库级与模块级依赖规则。
+因此，这份文档的目标是定义 `Stellar Axis（星轴）` 体系下的仓库级与模块级依赖规则。
 
 ## 2. Design
 
@@ -58,8 +58,8 @@
 
 #### L2：公共运行时与 SDK 层
 
-- `stellar-steel`
-- `stellar-titan`
+- `stellar-core`
+- `stellar-pulse`
 - 各产品 `clients/`
 - 各产品 `sdk/`
 
@@ -137,7 +137,7 @@ L5 示例与测试层
 
 - `stellar-axis` 是规范与入口仓库，不是运行时代码仓库。
 
-#### `stellar-steel`
+#### `stellar-core`
 
 允许依赖：
 
@@ -154,9 +154,9 @@ L5 示例与测试层
 
 解释：
 
-- `stellar-steel` 是 Java 聚合运行时，只能依赖稳定契约，不能反向依赖具体服务端实现。
+- `stellar-core` 是 Java 聚合运行时，只能依赖稳定契约，不能反向依赖具体服务端实现。
 
-#### `stellar-titan`
+#### `stellar-pulse`
 
 允许依赖：
 
@@ -172,9 +172,9 @@ L5 示例与测试层
 
 解释：
 
-- `stellar-titan` 与 `stellar-steel` 同理，是 Go 运行时聚合，不允许被具体产品实现污染。
+- `stellar-pulse` 与 `stellar-core` 同理，是 Go 运行时聚合，不允许被具体产品实现污染。
 
-#### `spirit-axis`
+#### `astral-layer`
 
 允许依赖：
 
@@ -190,16 +190,16 @@ L5 示例与测试层
 
 解释：
 
-- AI 灵觉层可以消费平台能力，但应通过公开协议接入，而不是侵入具体产品实现。
+- AI 星穹层可以消费平台能力，但应通过公开协议接入，而不是侵入具体产品实现。
 
 #### 核心产品仓库
 
-以 `starmap`、`nebula`、`orbit`、`taiji-flow` 等为代表。
+以 `starmap`、`nebula`、`orbit`、`comet-flow` 等为代表。
 
 允许依赖：
 
 - 自身仓库内的 `api/`
-- `stellar-steel` 或 `stellar-titan` 中的公共运行时抽象
+- `stellar-core` 或 `stellar-pulse` 中的公共运行时抽象
 - 必要的第三方基础组件
 
 禁止依赖：
@@ -211,7 +211,7 @@ L5 示例与测试层
 
 解释：
 
-- 核心产品之间只能通过协议、SDK、事件或控制面 API 交互，不能直接吃彼此内部代码。
+- 核心产品之间只能通过协议、SDK、事件或控制面 API 交互，不能直接引用彼此内部代码。
 
 #### `stellar-control-plane`
 
@@ -255,8 +255,8 @@ L5 示例与测试层
 允许依赖：
 
 - 各产品公开 SDK
-- `stellar-steel`
-- `stellar-titan`
+- `stellar-core`
+- `stellar-pulse`
 
 禁止依赖：
 
@@ -345,7 +345,7 @@ L5 示例与测试层
 
 - `clients/`
 - `api/`
-- `stellar-steel` 公共模块
+- `stellar-core` 公共模块
 
 禁止依赖：
 
@@ -364,7 +364,7 @@ L5 示例与测试层
 
 - `api/`
 - `clients/`
-- `stellar-titan` 或边车运行时公共模块
+- `stellar-pulse` 或边车运行时公共模块
 
 禁止依赖：
 
@@ -430,16 +430,16 @@ L5 示例与测试层
 
 ### 3.3 聚合仓库内部依赖规则
 
-#### `stellar-steel`
+#### `stellar-core`
 
 推荐依赖方向：
 
 ```text
-stellar-steel-bom
+stellar-core-bom
   ↓
-stellar-steel-common
+stellar-core-common
   ↓
-stellar-steel-core
+stellar-core-runtime
   ↓
 sdks/*
   ↓
@@ -452,10 +452,10 @@ examples/*
 
 - `bom` 不依赖业务模块。
 - `common` 不依赖 `sdk` 和 `starter`。
-- `core` 可以依赖 `common`，不能依赖具体 `starter`。
-- `starter` 可以依赖 `sdk` 与 `core`，不能依赖任意产品 `server/`。
+- `runtime` 可以依赖 `common`，不能依赖具体 `starter`。
+- `starter` 可以依赖 `sdk` 与 `runtime`，不能依赖任意产品 `server/`。
 
-#### `stellar-titan`
+#### `stellar-pulse`
 
 推荐依赖方向：
 
@@ -484,7 +484,7 @@ examples/*
 
 - 通过 HTTP/gRPC/OpenAPI/Protobuf 调用公开接口
 - 通过官方 SDK 调用公开能力
-- 通过 `TaiJi Flow` 进行异步事件通信
+- 通过 `CometFlow` 进行异步事件通信
 - 通过 `Nebula` 下发配置
 - 通过控制平面进行统一编排
 
@@ -512,44 +512,11 @@ examples/*
 
 - 这些依赖会打破层级、破坏封装，并导致后续升级和拆仓成本急剧上升。
 
-### 3.6 最终依赖矩阵
-
-#### 允许依赖
-
-| From | Allow |
-| :--- | :--- |
-| `stellar-axis` | 文档级引用，无代码依赖 |
-| `stellar-steel` | `api`、公开 SDK、公共模型 |
-| `stellar-titan` | `api`、公开 SDK、公共模型 |
-| `spirit-axis` | 公开协议、公开 SDK、MCP 协议 |
-| `product/server` | 本产品 `api`、公共运行时 |
-| `product/clients` | 本产品 `api`、公共运行时 |
-| `product/starters` | 本产品 `clients`、本产品 `api`、`stellar-steel` |
-| `product/sidecars` | 本产品 `api`、本产品 `clients`、`stellar-titan` |
-| `product/operators` | 本产品 `api`、管理 API Client、K8s Runtime |
-| `stellar-control-plane` | 各产品公开 API、公开 SDK |
-| `stellarctl` | 各产品公开管理 API Client |
-| `stellar-examples` | 公开 SDK、公共运行时 |
-
-#### 禁止依赖
-
-| From | Forbidden |
-| :--- | :--- |
-| `stellar-axis` | 任意运行时代码 |
-| `stellar-steel` | 任意产品 `server/internal` |
-| `stellar-titan` | 任意产品 `server/internal` |
-| `product/starters` | `server` |
-| `product/clients` | `server` |
-| `product/operators` | `server`、`frontend` |
-| `product/sidecars` | 其他产品 `server/internal` |
-| `stellar-control-plane` | 任意产品 `internal/domain/infrastructure` |
-| `stellar-examples` | 任意产品内部实现 |
-
 ## 4. Complete Code
 
 以下内容可作为依赖规则摘要直接复用：
 
-```md
+~~~md
 # Module Dependency
 
 ## 依赖原则
@@ -561,8 +528,8 @@ examples/*
 ## 仓库级规则
 
 - `stellar-axis`：只做规范，不依赖任何运行时代码
-- `stellar-steel`：可依赖公开 API 与 SDK，不可依赖产品服务端实现
-- `stellar-titan`：可依赖公开 API 与 SDK，不可依赖产品服务端实现
+- `stellar-core`：可依赖公开 API 与 SDK，不可依赖产品服务端实现
+- `stellar-pulse`：可依赖公开 API 与 SDK，不可依赖产品服务端实现
 - `stellar-control-plane`：可依赖公开管理接口，不可依赖产品内部模块
 - `stellarctl`：可依赖公开管理 API Client，不可依赖服务端内部代码
 
@@ -583,4 +550,4 @@ examples/*
 - `control-plane -> product/internal`
 - `productA/server -> productB/server`
 - `examples -> product/internal`
-```
+~~~

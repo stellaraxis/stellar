@@ -2,7 +2,7 @@
 
 ## 1. Problem Analysis
 
-The current system already has clear naming, layout, and dependency decisions, but those decisions are spread across multiple documents. Without a single decision record, the team may still drift back to transitional naming, inconsistent repository structures, or invalid dependencies.
+The system already has clear naming, layout, and dependency decisions, but those decisions previously mixed multiple semantic systems. Without a single decision record, the team may drift back to legacy aliases, inconsistent repository structures, or invalid dependencies.
 
 This document consolidates the architecture decisions that define the current form of the system.
 
@@ -41,67 +41,67 @@ Each decision includes:
 
 #### Context
 
-The project previously mixed multiple top-level expressions such as `LiangYi`, `两仪`, and `Stellar Axis`. That creates ambiguity across documentation, repository names, and future ecosystem growth.
+The project previously mixed multiple top-level expressions and symbolic systems. That created ambiguity across documentation, repository names, and future ecosystem growth.
 
 #### Decision
 
 The official global brand is fixed as:
 
 - English: `Stellar Axis`
-- Chinese: `两仪`
-- first combined presentation: `Stellar Axis（两仪）`
+- Chinese: `星轴`
+- first combined presentation: `Stellar Axis（星轴）`
 
-`LiangYi` is retained only as a phonetic reference, not as the primary English-facing brand.
+The brand model is now purely cosmic and no longer carries parallel philosophical aliases.
 
 #### Consequence
 
 - English-facing documents, repository namespaces, and coordinates use `Stellar Axis`
-- Chinese-facing materials use `两仪`
-- mixed transitions such as `LiangYi Framework` are deprecated
+- Chinese-facing materials use `星轴`
+- legacy symbolic naming is removed from the documentation baseline
 
 ### ADR-002: Core Product Naming
 
 #### Context
 
-The system needs names that work both as technical products and as part of a coherent philosophical system.
+The system needs names that work both as technical products and as part of a coherent brand grammar.
 
 #### Decision
 
 Every core infrastructure product uses:
 
-> `English product name + Chinese Bagua name`
+> `English product name + Chinese cosmic name`
 
 Final component set:
 
-| Domain | English Name | Chinese Name | Short Name |
-| :--- | :--- | :--- | :--- |
-| Registry | `StarMap` | `乾仪` | `乾` |
-| Config | `Nebula` | `坤仪` | `坤` |
-| Tracing | `LightBeam` | `离鉴` | `离` |
-| Governance | `Orbit` | `巽策` | `巽` |
-| Limiter | `Pulsar` | `艮闸` | `艮` |
-| Scheduler | `Chronos` | `震策` | `震` |
-| Locking | `Singularity` | `坎锁` | `坎` |
-| Gateway | `EventHorizon` | `兑门` | `兑` |
-| Messaging | `TaiJi Flow` | `太极流` | `中枢` |
+| Domain | English Name | Chinese Name |
+| :--- | :--- | :--- |
+| Registry | `StarMap` | `星图` |
+| Config | `Nebula` | `星云` |
+| Tracing | `StarTrace` | `星迹` |
+| Governance | `Orbit` | `星轨` |
+| Limiter | `Pulsar` | `脉冲` |
+| Scheduler | `Astrolabe` | `星盘` |
+| Locking | `Singularity` | `奇点` |
+| Gateway | `EventHorizon` | `视界` |
+| Messaging | `CometFlow` | `彗流` |
 
 The AI extension layer is defined separately:
 
 | English Name | Chinese Name |
 | :--- | :--- |
-| `Spirit Axis` | `灵觉层` |
-| `ZhongFu Engine` | `中孚` |
-| `DaChu Memory` | `大畜` |
-| `Sui Agent` | `随位` |
-| `Xian MCP` | `咸` |
-| `Heng MCP` | `恒` |
-| `Meng MCP` | `蒙` |
+| `Astral Layer` | `星穹层` |
+| `Quasar Engine` | `类星引擎` |
+| `StarVault Memory` | `星库` |
+| `Orbit Agent` | `轨使` |
+| `Sensor MCP` | `星感` |
+| `Vector MCP` | `星行` |
+| `GuideStar MCP` | `导星` |
 
 #### Consequence
 
-- transitional hybrid names such as `Qian-Directory` and `Kun-Profile` are deprecated
-- documentation and product cards use the dual-name convention
+- documentation and product cards use the dual cosmic naming convention
 - repositories and engineering modules use English engineering names only
+- non-cosmic legacy aliases are not part of the active naming system
 
 ### ADR-003: Repository Topology
 
@@ -116,9 +116,9 @@ The system uses a three-level repository model.
 Top-level aggregate repositories:
 
 - `stellar-axis`
-- `stellar-steel`
-- `stellar-titan`
-- `spirit-axis`
+- `stellar-core`
+- `stellar-pulse`
+- `astral-layer`
 - `stellar-control-plane`
 - `stellarctl`
 - `stellar-examples`
@@ -128,13 +128,13 @@ Core product repositories:
 
 - `starmap`
 - `nebula`
-- `lightbeam`
+- `startrace`
 - `orbit`
 - `pulsar`
-- `chronos`
+- `astrolabe`
 - `singularity`
 - `event-horizon`
-- `taiji-flow`
+- `comet-flow`
 
 Each product repository follows the same skeleton:
 
@@ -193,7 +193,7 @@ Forbidden dependency principles:
 Repository-level rules:
 
 - `stellar-axis` has no runtime code dependencies
-- `stellar-steel` and `stellar-titan` depend on public contracts only
+- `stellar-core` and `stellar-pulse` depend on public contracts only
 - product repositories may depend on their own `api/` and shared runtime abstractions
 - the control plane depends on public management surfaces, not internal implementations
 
@@ -208,15 +208,15 @@ Repository-level rules:
 
 The current architecture is defined by the following fixed decisions:
 
-```md
+~~~md
 # Architecture Decision Record
 
 ## Fixed decisions
 
-1. The only official global brand is `Stellar Axis（两仪）`.
-2. Core products use `English product name + Chinese Bagua name`.
+1. The only official global brand is `Stellar Axis（星轴）`.
+2. Core products use `English product name + Chinese cosmic name`.
 3. Repositories, modules, and dependency coordinates use English engineering names only.
 4. The repository model is split into aggregate repositories, core product repositories, and supporting repositories.
 5. Cross-product collaboration must happen through public APIs, SDKs, events, or control-plane interfaces.
 6. Direct dependencies on internal implementation are forbidden across repository boundaries.
-```
+~~~

@@ -11,7 +11,7 @@
 - Starter、Sidecar、Operator、Agent Runtime 的位置不固定，导致依赖和职责边界混乱。
 - 文档、SDK、示例、部署清单、控制平面可能被散落在各个仓库中，后续难以治理。
 
-因此，这份文档的目标是定义一套最终可执行的仓库与目录布局规范，使整套 `Stellar Axis（两仪）` 体系可以在扩展时保持一致。
+因此，这份文档的目标是定义一套最终可执行的仓库与目录布局规范，使整套 `Stellar Axis（星轴）` 体系可以在扩展时保持一致。
 
 ## 2. Design
 
@@ -34,9 +34,9 @@
 用于承载总文档、全局 BOM、规范、示例导航与跨产品聚合逻辑。
 
 - `stellar-axis`
-- `stellar-steel`
-- `stellar-titan`
-- `spirit-axis`
+- `stellar-core`
+- `stellar-pulse`
+- `astral-layer`
 - `stellar-control-plane`
 
 #### 第二层：核心产品仓库
@@ -45,13 +45,13 @@
 
 - `starmap`
 - `nebula`
-- `lightbeam`
+- `startrace`
 - `orbit`
 - `pulsar`
-- `chronos`
+- `astrolabe`
 - `singularity`
 - `event-horizon`
-- `taiji-flow`
+- `comet-flow`
 
 #### 第三层：配套能力仓库
 
@@ -76,7 +76,7 @@
 
 它不承载具体中间件源码，只承载全局说明与治理规则。
 
-#### `stellar-steel`
+#### `stellar-core`
 
 作为 Java 聚合仓库，职责是：
 
@@ -88,7 +88,7 @@
 
 它是 Java 研发者接入体系的主入口。
 
-#### `stellar-titan`
+#### `stellar-pulse`
 
 作为 Go 聚合仓库，职责是：
 
@@ -124,9 +124,9 @@
 | 仓库名 | 作用 |
 | :--- | :--- |
 | `stellar-axis` | 总入口、规范、架构、产品导航 |
-| `stellar-steel` | Java 聚合仓库 |
-| `stellar-titan` | Go 聚合仓库 |
-| `spirit-axis` | AI 灵觉层聚合仓库 |
+| `stellar-core` | Java 聚合仓库 |
+| `stellar-pulse` | Go 聚合仓库 |
+| `astral-layer` | AI 星穹层聚合仓库 |
 | `stellar-control-plane` | 控制平面与统一管理后台 |
 | `stellarctl` | CLI 工具仓库 |
 | `stellar-examples` | 官方示例仓库 |
@@ -137,15 +137,15 @@
 
 | 仓库名 | 产品名 | 职责 |
 | :--- | :--- | :--- |
-| `starmap` | `StarMap · 乾` | 服务注册与发现 |
-| `nebula` | `Nebula · 坤` | 配置中心 |
-| `lightbeam` | `LightBeam · 离` | 链路追踪 |
-| `orbit` | `Orbit · 巽` | 服务治理与流量路由 |
-| `pulsar` | `Pulsar · 艮` | 限流、熔断、过载保护 |
-| `chronos` | `Chronos · 震` | 分布式调度 |
-| `singularity` | `Singularity · 坎` | 分布式锁 |
-| `event-horizon` | `EventHorizon · 兑` | 网关与边界入口 |
-| `taiji-flow` | `TaiJi Flow · 太极流` | MQ / Event Streaming |
+| `starmap` | `StarMap · 星图` | 服务注册与发现 |
+| `nebula` | `Nebula · 星云` | 配置中心 |
+| `startrace` | `StarTrace · 星迹` | 链路追踪 |
+| `orbit` | `Orbit · 星轨` | 服务治理与流量路由 |
+| `pulsar` | `Pulsar · 脉冲` | 限流、熔断、过载保护 |
+| `astrolabe` | `Astrolabe · 星盘` | 分布式调度 |
+| `singularity` | `Singularity · 奇点` | 分布式锁 |
+| `event-horizon` | `EventHorizon · 视界` | 网关与边界入口 |
+| `comet-flow` | `CometFlow · 彗流` | MQ / Event Streaming |
 
 ### 3.2 总入口仓库结构
 
@@ -179,73 +179,54 @@ stellar-axis/
     └── roadmap.md
 ```
 
-目录解释：
-
-- `docs/architecture` 放总架构设计。
-- `docs/concepts` 放核心概念解释。
-- `docs/decisions` 放架构决策记录。
-- `product-matrix/` 放每个组件的一页式介绍。
-
 ### 3.3 Java 聚合仓库结构
 
-#### `stellar-steel`
+#### `stellar-core`
 
 推荐目录结构：
 
 ```text
-stellar-steel/
+stellar-core/
 ├── README.md
 ├── pom.xml
-├── stellar-steel-bom/
-├── stellar-steel-core/
-├── stellar-steel-common/
-├── stellar-steel-testing/
-├── stellar-steel-observability/
+├── stellar-core-bom/
+├── stellar-core-runtime/
+├── stellar-core-common/
+├── stellar-core-testing/
+├── stellar-core-observability/
 ├── starters/
 │   ├── starmap-spring-boot-starter/
 │   ├── nebula-spring-boot-starter/
-│   ├── lightbeam-spring-boot-starter/
+│   ├── startrace-spring-boot-starter/
 │   ├── orbit-spring-boot-starter/
 │   ├── pulsar-spring-boot-starter/
-│   ├── chronos-spring-boot-starter/
+│   ├── astrolabe-spring-boot-starter/
 │   ├── singularity-spring-boot-starter/
 │   ├── event-horizon-spring-boot-starter/
-│   └── taiji-flow-spring-boot-starter/
+│   └── comet-flow-spring-boot-starter/
 ├── sdks/
 │   ├── starmap-client/
 │   ├── nebula-client/
-│   ├── lightbeam-client/
+│   ├── startrace-client/
 │   ├── orbit-client/
 │   ├── pulsar-client/
-│   ├── chronos-client/
+│   ├── astrolabe-client/
 │   ├── singularity-client/
 │   ├── event-horizon-client/
-│   └── taiji-flow-client/
+│   └── comet-flow-client/
 ├── integrations/
-│   ├── spring-cloud/
-│   ├── grpc/
-│   ├── dubbo/
-│   └── servlet/
 ├── examples/
 └── docs/
 ```
 
-目录解释：
-
-- `stellar-steel-bom/` 统一版本管理。
-- `stellar-steel-core/` 放 Java 通用核心抽象。
-- `starters/` 承载所有 Spring Boot Starter。
-- `sdks/` 承载所有 Java Client SDK。
-- `integrations/` 处理外部生态对接。
-
 ### 3.4 Go 聚合仓库结构
 
-#### `stellar-titan`
+#### `stellar-pulse`
 
 推荐目录结构：
 
 ```text
-stellar-titan/
+stellar-pulse/
 ├── README.md
 ├── go.mod
 ├── cmd/
@@ -260,58 +241,44 @@ stellar-titan/
 ├── sdk/
 │   ├── starmap/
 │   ├── nebula/
-│   ├── lightbeam/
+│   ├── startrace/
 │   ├── orbit/
 │   ├── pulsar/
-│   ├── chronos/
+│   ├── astrolabe/
 │   ├── singularity/
 │   ├── eventhorizon/
-│   └── taijiflow/
+│   └── cometflow/
 ├── sidecars/
 │   ├── orbit-sidecar/
 │   ├── pulsar-sidecar/
-│   ├── lightbeam-sidecar/
+│   ├── startrace-sidecar/
 │   └── event-horizon-sidecar/
 ├── internal/
 ├── examples/
 └── docs/
 ```
 
-目录解释：
-
-- `pkg/` 放可复用公共包。
-- `sdk/` 放各产品 Go SDK。
-- `sidecars/` 放标准 Sidecar 形态实现。
-- `internal/` 放不对外暴露的内部实现。
-
 ### 3.5 AI 聚合仓库结构
 
-#### `spirit-axis`
+#### `astral-layer`
 
 推荐目录结构：
 
 ```text
-spirit-axis/
+astral-layer/
 ├── README.md
 ├── docs/
-├── zhongfu-engine/
-├── dachu-memory/
-├── sui-agent/
+├── quasar-engine/
+├── starvault-memory/
+├── orbit-agent/
 ├── protocols/
-│   ├── xian-mcp/
-│   ├── heng-mcp/
-│   └── meng-mcp/
+│   ├── sensor-mcp/
+│   ├── vector-mcp/
+│   └── guidestar-mcp/
 ├── sdk/
 ├── examples/
 └── deploy/
 ```
-
-目录解释：
-
-- `zhongfu-engine/` 放模型推理接入与推理框架。
-- `dachu-memory/` 放记忆与知识召回能力。
-- `sui-agent/` 放代理编排与运行时。
-- `protocols/` 放 MCP 协议族实现。
 
 ### 3.6 单产品仓库统一结构
 
@@ -363,242 +330,29 @@ starmap/
 
 - `starmap`
 - `nebula`
-- `lightbeam`
+- `startrace`
 - `orbit`
 - `pulsar`
-- `chronos`
+- `astrolabe`
 - `singularity`
 - `event-horizon`
-- `taiji-flow`
+- `comet-flow`
 
-#### 目录职责解释
-
-- `api/`：协议、模型、接口契约。
-- `server/`：服务端主实现。
-- `clients/`：多语言客户端。
-- `starters/`：面向 Java/Spring 的接入模块。
-- `sidecars/`：以 Sidecar 形态运行的产品能力。
-- `operators/`：Kubernetes Operator。
-- `deploy/`：部署与运维资产。
-- `test/`：集成测试、端到端测试、基准测试。
-
-### 3.7 Starter 目录规范
-
-Starter 只负责“接入体验”，不承载核心业务逻辑。
+### 3.7 Starter / Sidecar / Operator 规范
 
 统一命名：
 
-- `{product}-spring-boot-starter`
-
-统一结构：
-
-```text
-{product}-spring-boot-starter/
-├── pom.xml
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   └── resources/
-│   │       └── META-INF/
-│   └── test/
-└── README.md
-```
+- Starter：`{product}-spring-boot-starter`
+- Sidecar：`{product}-sidecar`
+- Operator：`{product}-operator`
 
 职责约束：
 
-- 自动配置
-- 配置属性绑定
-- Bean 装配
-- 健康检查与基础扩展点
+- Starter 只负责接入体验，不承载核心业务逻辑。
+- Sidecar 只负责独立进程形态的运行能力。
+- Operator 只负责 Kubernetes 生命周期管理。
 
-不放入 Starter 的内容：
-
-- 重业务逻辑
-- 协议主实现
-- 大量领域模型
-
-### 3.8 Sidecar 目录规范
-
-Sidecar 负责承载边车运行形态，主要用于流量治理、观测、限流、网关增强等场景。
-
-统一命名：
-
-- `{product}-sidecar`
-
-统一结构：
-
-```text
-{product}-sidecar/
-├── README.md
-├── cmd/
-│   └── {product}-sidecar/
-├── configs/
-├── internal/
-│   ├── bootstrap/
-│   ├── handler/
-│   ├── runtime/
-│   └── transport/
-├── pkg/
-├── deploy/
-│   ├── docker/
-│   ├── helm/
-│   └── kubernetes/
-└── test/
-```
-
-适合 Sidecar 形态的产品：
-
-- `orbit-sidecar`
-- `pulsar-sidecar`
-- `lightbeam-sidecar`
-- `event-horizon-sidecar`
-
-原则：
-
-- 不是每个产品都必须有 Sidecar。
-- 只有在“独立进程附着服务”确实成立时才创建。
-
-### 3.9 Operator 目录规范
-
-Operator 负责 Kubernetes 场景下的安装、升级、配置同步和资源编排。
-
-统一命名：
-
-- `{product}-operator`
-
-统一结构：
-
-```text
-{product}-operator/
-├── README.md
-├── cmd/
-│   └── manager/
-├── api/
-│   └── v1alpha1/
-├── controllers/
-├── config/
-│   ├── crd/
-│   ├── rbac/
-│   ├── manager/
-│   └── samples/
-├── internal/
-├── test/
-│   ├── integration/
-│   └── e2e/
-└── docs/
-```
-
-适合 Operator 形态的产品：
-
-- `starmap-operator`
-- `nebula-operator`
-- `taiji-flow-operator`
-- `event-horizon-operator`
-
-原则：
-
-- 只有存在 Kubernetes 生命周期管理需求的产品才单独提供 Operator。
-
-### 3.10 控制平面仓库结构
-
-#### `stellar-control-plane`
-
-推荐目录结构：
-
-```text
-stellar-control-plane/
-├── README.md
-├── docs/
-├── backend/
-│   ├── api/
-│   ├── application/
-│   ├── domain/
-│   ├── infrastructure/
-│   └── interfaces/
-├── frontend/
-├── modules/
-│   ├── starmap-console/
-│   ├── nebula-console/
-│   ├── orbit-console/
-│   ├── pulsar-console/
-│   └── taiji-flow-console/
-├── auth/
-├── deploy/
-└── test/
-```
-
-目录解释：
-
-- `backend/` 放统一控制平面后端。
-- `frontend/` 放管理控制台前端。
-- `modules/` 放各产品管理页能力模块。
-
-### 3.11 CLI 仓库结构
-
-#### `stellarctl`
-
-推荐目录结构：
-
-```text
-stellarctl/
-├── README.md
-├── cmd/
-│   ├── root/
-│   ├── starmap/
-│   ├── nebula/
-│   ├── orbit/
-│   ├── pulsar/
-│   └── taiji-flow/
-├── pkg/
-│   ├── client/
-│   ├── output/
-│   ├── config/
-│   └── auth/
-├── internal/
-├── docs/
-└── test/
-```
-
-职责：
-
-- 集群管理
-- 配置查看与下发
-- 服务治理策略管理
-- 发布、回滚、诊断
-
-### 3.12 示例与部署仓库结构
-
-#### `stellar-examples`
-
-```text
-stellar-examples/
-├── java/
-│   ├── starmap-demo/
-│   ├── nebula-demo/
-│   └── orbit-demo/
-├── go/
-│   ├── starmap-demo/
-│   ├── pulsar-demo/
-│   └── taiji-flow-demo/
-├── fullstack/
-│   ├── e-commerce/
-│   └── order-system/
-└── docs/
-```
-
-#### `stellar-deploy`
-
-```text
-stellar-deploy/
-├── docker-compose/
-├── kubernetes/
-├── helm/
-├── terraform/
-├── ansible/
-└── scripts/
-```
-
-### 3.13 模块拆分约束
+### 3.8 模块拆分约束
 
 为了避免仓库越来越乱，统一遵循以下约束：
 
@@ -636,15 +390,15 @@ stellar-deploy/
 
 以下内容可作为仓库布局摘要直接复用：
 
-```md
+~~~md
 # Repo Layout
 
 ## 顶层仓库
 
 - `stellar-axis`：总入口与规范仓库
-- `stellar-steel`：Java 聚合仓库
-- `stellar-titan`：Go 聚合仓库
-- `spirit-axis`：AI 灵觉层聚合仓库
+- `stellar-core`：Java 聚合仓库
+- `stellar-pulse`：Go 聚合仓库
+- `astral-layer`：AI 星穹层聚合仓库
 - `stellar-control-plane`：统一控制平面
 - `stellarctl`：CLI 工具
 - `stellar-examples`：示例仓库
@@ -654,13 +408,13 @@ stellar-deploy/
 
 - `starmap`
 - `nebula`
-- `lightbeam`
+- `startrace`
 - `orbit`
 - `pulsar`
-- `chronos`
+- `astrolabe`
 - `singularity`
 - `event-horizon`
-- `taiji-flow`
+- `comet-flow`
 
 ## 单产品统一目录骨架
 
@@ -676,24 +430,5 @@ stellar-deploy/
 ├── deploy/
 ├── test/
 └── examples/
-```
-
-## Starter 命名
-
-- `{product}-spring-boot-starter`
-
-## Sidecar 命名
-
-- `{product}-sidecar`
-
-## Operator 命名
-
-- `{product}-operator`
-
-## 设计原则
-
-1. 每个核心中间件独立成仓。
-2. Java 与 Go 各有统一聚合仓库。
-3. 工程实体统一使用英文命名。
-4. Starter 只负责接入，Sidecar 只负责边车形态，Operator 只负责 Kubernetes 生命周期管理。
+~~~
 ```

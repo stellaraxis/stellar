@@ -1,6 +1,6 @@
 # Stellar Axis
 
-`Stellar Axis` is a self-developed microservice middleware system. Its official Chinese brand name is `两仪`. The system uses the stellar axis as its engineering metaphor, the Bagua as its structural order, and the Spirit Axis as its AI expansion layer for high-concurrency, high-availability, and governable distributed systems.
+`Stellar Axis` is a self-developed microservice middleware system. Its official Chinese brand name is `星轴`. The entire system now uses a pure cosmic naming model: the global brand is built around the axis metaphor, core products use names such as `StarMap`, `Nebula`, `Orbit`, and `EventHorizon`, and the AI extension is grouped under `Astral Layer`.
 
 This repository currently focuses on four areas:
 
@@ -16,179 +16,125 @@ Stellar Axis is not a loose collection of unrelated middleware pieces. It is a u
 The system follows these rules:
 
 - `Stellar Axis` is the only official global English brand
-- core components are presented as `English product name + Chinese Bagua name`
+- core components are presented as `English product name + Chinese cosmic name`
 - repositories, modules, packages, and coordinates use English engineering names only
 - cross-product collaboration happens through APIs, SDKs, events, and the control plane
 
 Dual-stack positioning:
 
-- Java framework: `Stellar Steel`
-- Go framework: `Stellar Titan`
+- Java framework: `Stellar Core`
+- Go framework: `Stellar Pulse`
 
 ## Core Component Matrix
 
 | Domain | English Full Name / Chinese Full Name | Short Name | Responsibility |
 | :--- | :--- | :--- | :--- |
-| <nobr>Service discovery</nobr> | `StarMap / 乾仪` | `乾` | service metadata, instance discovery, registration |
-| <nobr>Config center</nobr> | `Nebula / 坤仪` | `坤` | dynamic configuration and environment distribution |
-| <nobr>Tracing</nobr> | `LightBeam / 离鉴` | `离` | tracing, observability, request illumination |
-| <nobr>Governance</nobr> | `Orbit / 巽策` | `巽` | routing, traffic governance, rollout control |
-| <nobr>Limiting and circuit breaking</nobr> | `Pulsar / 艮闸` | `艮` | rate limiting, circuit breaking, overload protection |
-| <nobr>Distributed scheduling</nobr> | `Chronos / 震策` | `震` | scheduling and distributed job execution |
-| <nobr>Distributed locking</nobr> | `Singularity / 坎锁` | `坎` | exclusivity and concurrency control |
-| <nobr>Gateway</nobr> | `EventHorizon / 兑门` | `兑` | ingress, boundary traffic, protocol aggregation |
-| <nobr>Messaging and event flow</nobr> | `TaiJi Flow / 太极流` | `中枢` | messaging, event streaming, asynchronous decoupling |
+| Service discovery | `StarMap / 星图` | `星图` | service metadata, instance discovery, registration |
+| Config center | `Nebula / 星云` | `星云` | dynamic configuration and environment distribution |
+| Tracing | `StarTrace / 星迹` | `星迹` | tracing, observability, request path reconstruction |
+| Governance | `Orbit / 星轨` | `星轨` | routing, traffic governance, rollout control |
+| Limiting and circuit breaking | `Pulsar / 脉冲` | `脉冲` | rate limiting, circuit breaking, overload protection |
+| Distributed scheduling | `Astrolabe / 星盘` | `星盘` | scheduling, cadence control, job orchestration |
+| Distributed locking | `Singularity / 奇点` | `奇点` | exclusivity and concurrency control |
+| Gateway | `EventHorizon / 视界` | `视界` | ingress, boundary traffic, protocol aggregation |
+| Messaging and event flow | `CometFlow / 彗流` | `彗流` | messaging, event streaming, asynchronous decoupling |
 
 Recommended presentation style:
 
-- `StarMap · 乾`
-- `Nebula · 坤`
-- `Orbit · 巽`
-- `TaiJi Flow · 太极流`
+- `StarMap · 星图`
+- `Nebula · 星云`
+- `Orbit · 星轨`
+- `CometFlow · 彗流`
 
 ## Naming Rationale for Core Components
 
-These names are not direct functional translations. Each one binds an engineering role to a stellar metaphor and a Bagua-derived Chinese concept. The English name carries technical branding, while the Chinese name carries structural and philosophical meaning.
+The naming system no longer relies on regional philosophy or legacy symbolic aliases. Every product name is derived directly from cosmic structures, motion, light, time-space boundaries, or observable celestial patterns.
 
-### StarMap · 乾仪
+### StarMap · 星图
 
 - `StarMap` refers to a celestial map or coordinate chart. A service registry is effectively the coordinate system of the platform, allowing services to locate and discover one another.
-- `乾仪` draws from the idea that `Qian` represents Heaven in the *I Ching*. Qian stands for primacy, order, and overarching direction, which matches the role of global service metadata.
-- The character `仪` suggests a formal model, pattern, or governing frame, indicating that this is the system-wide reference standard rather than a single node.
+- `星图` is a direct Chinese mirror of the same concept, keeping the brand model simple and consistent.
 
-### Nebula · 坤仪
+### Nebula · 星云
 
-- `Nebula` evokes the stellar nursery: a space that carries matter and gives rise to formation. That aligns with a config center, which carries environment state and nurtures runtime behavior.
-- `坤仪` draws from `Kun`, which represents Earth in the *I Ching*. Kun is the principle of bearing, containing, and sustaining, which fits a configuration substrate.
-- `仪` again signals a formal system of order rather than a random set of config values.
+- `Nebula` evokes a carrier field that holds matter and gives rise to structure. That aligns with a config center, which carries environment state and shapes runtime behavior.
+- `星云` stays close to the English name and avoids introducing an unrelated symbolic layer.
 
-### LightBeam · 离鉴
+### StarTrace · 星迹
 
-- `LightBeam` highlights the act of illumination. Distributed tracing exists to make invisible call paths visible across the system.
-- `离鉴` draws from `Li`, which in the *I Ching* is associated with fire, brightness, and visibility.
-- `鉴` means mirror, reflection, or discernment. The point is not only to illuminate the system, but also to inspect and understand it clearly.
+- `StarTrace` highlights the act of leaving a visible trajectory. Distributed tracing exists to make invisible call paths visible across the system.
+- `星迹` conveys path visibility, historical replay, and causal reconstruction.
 
-### Orbit · 巽策
+### Orbit · 星轨
 
 - `Orbit` expresses governed movement along an established path. That directly fits routing, policy-driven traffic shaping, and service governance.
-- `巽策` draws from `Xun`, associated with wind in the *I Ching*. Wind penetrates gently but thoroughly, which matches the way governance influences traffic behavior without brute force.
-- `策` means strategy, planning, and policy. The name emphasizes rule-based guidance rather than static interception.
+- `星轨` makes the same idea explicit in Chinese: a path that is stable, guided, and observable.
 
-### Pulsar · 艮闸
+### Pulsar · 脉冲
 
 - `Pulsar` suggests stable cadence and precise periodic control. That maps well to quotas, thresholds, and controlled frequency in rate limiting and circuit breaking.
-- `艮闸` draws from `Gen`, associated with stillness and stopping in the *I Ching*.
-- `闸` means gate or sluice. The name makes the engineering meaning explicit: it is a protective gate that stops overload and isolates failure.
+- `脉冲` keeps the meaning compact and operational.
 
-### Chronos · 震策
+### Astrolabe · 星盘
 
-- `Chronos` represents time order and temporal control, making it a natural fit for scheduling.
-- `震策` draws from `Zhen`, associated with thunder and activation in the *I Ching*.
-- `策` emphasizes orchestration and dispatch strategy, not just clock-based triggering.
+- `Astrolabe` refers to a celestial instrument used for position and time-related calculation. That makes it a natural fit for scheduling and orchestration.
+- `星盘` captures timing, calibration, and navigation in a single image.
 
-### Singularity · 坎锁
+### Singularity · 奇点
 
 - `Singularity` captures the idea of collapsing many concurrent contenders into one exclusive control point.
-- `坎锁` draws from `Kan`, associated with water, danger, and constrained passage in the *I Ching*.
-- `锁` states the engineering role directly: exclusive locking that turns disorderly contention into controlled access.
+- `奇点` preserves the same sense of convergence and unique arbitration.
 
-### EventHorizon · 兑门
+### EventHorizon · 视界
 
 - `EventHorizon` represents a boundary surface between inside and outside. A gateway is exactly that boundary for ingress traffic.
-- `兑门` draws from `Dui`, associated with openness, speech, and the mouth or opening in the *I Ching*.
-- `门` makes the meaning explicit: it is the formal gate through which external requests enter the system.
+- `视界` expresses boundary, threshold, and formal ingress in a concise way.
 
-### TaiJi Flow · 太极流
+### CometFlow · 彗流
 
-- `TaiJi Flow` emphasizes flow as the medium of events, messages, and asynchronous movement across the platform.
-- `太极流` draws from the classical line that Taiji gives rise to LiangYi. In this system, messaging is treated as the central medium that keeps all components connected.
-- The name is intentionally central rather than peripheral, because the messaging layer is the circulation core of the overall architecture.
+- `CometFlow` emphasizes fast movement across space with a clear visible trail. That is a strong metaphor for messages, events, and asynchronous flow.
+- `彗流` keeps the product rooted in the same cosmic language as the rest of the system.
 
 ## AI Extension Layer
 
-Beyond the Bagua governance matrix, the system defines an independent AI-native extension layer:
+Beyond the core governance products, the system defines an independent AI-native extension layer:
 
 | English Name | Chinese Name | Responsibility |
 | :--- | :--- | :--- |
-| `Spirit Axis` | `灵觉层` | overall AI capability layer |
-| `ZhongFu Engine` | `中孚` | reasoning and model understanding |
-| `DaChu Memory` | `大畜` | memory and knowledge accumulation |
-| `Sui Agent` | `随位` | agent orchestration and autonomous execution |
-| `Xian MCP` | `咸` | context perception protocol |
-| `Heng MCP` | `恒` | tool execution protocol |
-| `Meng MCP` | `蒙` | prompt guidance protocol |
+| `Astral Layer` | `星穹层` | overall AI capability layer |
+| `Quasar Engine` | `类星引擎` | reasoning and model understanding |
+| `StarVault Memory` | `星库` | memory and knowledge accumulation |
+| `Orbit Agent` | `轨使` | agent orchestration and autonomous execution |
+| `Sensor MCP` | `星感` | context perception protocol |
+| `Vector MCP` | `星行` | tool execution protocol |
+| `GuideStar MCP` | `导星` | prompt guidance protocol |
 
-The Spirit Axis is intentionally separate from the eight Bagua positions. It is an intelligence layer built above the governance layer.
-
-## Naming Rationale for the AI Layer
-
-### Spirit Axis · 灵觉层
-
-- `Spirit Axis` describes the axis of cognition, understanding, and intelligent response.
-- `灵觉层` means an awareness layer rather than a single model endpoint. It frames AI as a structured layer of reasoning, memory, and execution.
-
-### ZhongFu Engine · 中孚
-
-- `ZhongFu` comes from Hexagram 61 of the *I Ching*, carrying the idea of inner trust, sincerity, and meaningful resonance.
-- As a reasoning engine, the name suggests semantic understanding with internal coherence rather than shallow pattern matching.
-
-### DaChu Memory · 大畜
-
-- `DaChu` comes from Hexagram 26, associated with accumulation, reserve, and cultivated storage.
-- That makes it a strong fit for memory, retrieval, and knowledge retention.
-
-### Sui Agent · 随位
-
-- `Sui` carries the sense of following conditions and adapting to circumstance.
-- `位` adds the idea of role and position, so the name conveys adaptive execution within a defined operational role.
-
-### Xian MCP · 咸
-
-- `Xian` comes from Hexagram 31, centered on resonance and mutual sensing.
-- That makes it appropriate for context perception and resource awareness.
-
-### Heng MCP · 恒
-
-- `Heng` comes from Hexagram 32, centered on constancy and continuity.
-- It fits the tool execution protocol because reliable action must be stable, repeatable, and durable.
-
-### Meng MCP · 蒙
-
-- `Meng` comes from Hexagram 4, associated with instruction, awakening, and guided understanding.
-- It fits prompt guidance because the role of prompting is to orient the model toward correct interpretation and action.
+The AI layer is defined as a separate cognitive layer above the governance stack, using the same cosmic naming grammar.
 
 ## Engineering Naming Rules
 
 The following names are fixed:
 
 - global brand: `Stellar Axis`
-- Java aggregate repository: `stellar-steel`
-- Go aggregate repository: `stellar-titan`
+- Java aggregate repository: `stellar-core`
+- Go aggregate repository: `stellar-pulse`
+- AI aggregate repository: `astral-layer`
 - control plane: `stellar-control-plane`
 - CLI: `stellarctl`
 - coordinate namespace: `io.stellar.axis`
 
-The following transitional names are deprecated:
-
-- `Qian-Directory`
-- `Kun-Profile`
-- `Li-Trace`
-- `Xun-Pilot`
-- `Gen-Brake`
-- `Zhen-Ticker`
-- `Kan-Vault`
-- `Dui-Portal`
+Legacy names built from mixed symbolic systems are removed from the documentation baseline.
 
 ## Repository Layout
 
-The system uses a three-level repository model:
+The system uses a three-level repository model.
 
 Top-level aggregate repositories:
 
 - `stellar-axis`
-- `stellar-steel`
-- `stellar-titan`
-- `spirit-axis`
+- `stellar-core`
+- `stellar-pulse`
+- `astral-layer`
 - `stellar-control-plane`
 - `stellarctl`
 - `stellar-examples`
@@ -198,13 +144,13 @@ Core product repositories:
 
 - `starmap`
 - `nebula`
-- `lightbeam`
+- `startrace`
 - `orbit`
 - `pulsar`
-- `chronos`
+- `astrolabe`
 - `singularity`
 - `event-horizon`
-- `taiji-flow`
+- `comet-flow`
 
 Unified product repository skeleton:
 
@@ -253,7 +199,7 @@ Forbidden patterns:
 
 ## Motto
 
-> Establish the foundation with Qian and Kun, observe the system through Xun and Li, guard order with Gen and Kan, activate flow through Zhen and Dui.
+> Align with the axis, discover through the map, coordinate on the orbit, and guard the boundary at the horizon.
 
 ## License
 

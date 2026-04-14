@@ -68,12 +68,7 @@ stellar-axis/
 └── links/
 ```
 
-#### 初始化完成标准
-
-- 所有体系规范文档入仓
-- 可作为总导航仓库对外展示
-
-### 3.2 Java 聚合仓库：`stellar-steel`
+### 3.2 Java 聚合仓库：`stellar-core`
 
 #### 第一步创建
 
@@ -84,12 +79,12 @@ stellar-axis/
 #### 第二步创建模块
 
 ```text
-stellar-steel/
-├── stellar-steel-bom/
-├── stellar-steel-common/
-├── stellar-steel-core/
-├── stellar-steel-testing/
-├── stellar-steel-observability/
+stellar-core/
+├── stellar-core-bom/
+├── stellar-core-common/
+├── stellar-core-runtime/
+├── stellar-core-testing/
+├── stellar-core-observability/
 ├── starters/
 ├── sdks/
 ├── integrations/
@@ -102,19 +97,13 @@ stellar-steel/
 - `starters/starmap-spring-boot-starter`
 - `starters/nebula-spring-boot-starter`
 - `starters/orbit-spring-boot-starter`
-- `starters/taiji-flow-spring-boot-starter`
+- `starters/comet-flow-spring-boot-starter`
 - `sdks/starmap-client`
 - `sdks/nebula-client`
 - `sdks/orbit-client`
-- `sdks/taiji-flow-client`
+- `sdks/comet-flow-client`
 
-#### 初始化完成标准
-
-- Maven 聚合构建通过
-- BOM 可以管理版本
-- 至少一个 starter 和一个 sdk 可编译
-
-### 3.3 Go 聚合仓库：`stellar-titan`
+### 3.3 Go 聚合仓库：`stellar-pulse`
 
 #### 第一步创建
 
@@ -124,7 +113,7 @@ stellar-steel/
 #### 第二步创建目录
 
 ```text
-stellar-titan/
+stellar-pulse/
 ├── cmd/
 ├── pkg/
 │   ├── runtime/
@@ -146,15 +135,9 @@ stellar-titan/
 - `sdk/starmap`
 - `sdk/nebula`
 - `sdk/orbit`
-- `sdk/taijiflow`
+- `sdk/cometflow`
 - `sidecars/orbit-sidecar`
 - `sidecars/pulsar-sidecar`
-
-#### 初始化完成标准
-
-- `go mod tidy` 可运行
-- `pkg/runtime` 存在最小公共抽象
-- 至少一个 sdk 和一个 sidecar 可编译
 
 ### 3.4 控制平面仓库：`stellar-control-plane`
 
@@ -186,13 +169,7 @@ stellar-control-plane/
 - `modules/starmap-console`
 - `modules/nebula-console`
 - `modules/orbit-console`
-- `modules/taiji-flow-console`
-
-#### 初始化完成标准
-
-- 后端可启动空服务
-- 前端可启动空壳页面
-- 至少一个 console 模块接入占位菜单
+- `modules/comet-flow-console`
 
 ### 3.5 CLI 仓库：`stellarctl`
 
@@ -222,12 +199,7 @@ stellarctl/
 - `cmd/starmap`
 - `cmd/nebula`
 - `cmd/orbit`
-- `cmd/taiji-flow`
-
-#### 初始化完成标准
-
-- CLI 可输出帮助信息
-- 配置文件解析可工作
+- `cmd/comet-flow`
 
 ### 3.6 示例仓库：`stellar-examples`
 
@@ -252,12 +224,7 @@ stellar-examples/
 - `java/orbit-demo`
 - `go/starmap-demo`
 - `go/pulsar-demo`
-- `go/taiji-flow-demo`
-
-#### 初始化完成标准
-
-- 至少一套 Java demo 可运行
-- 至少一套 Go demo 可运行
+- `go/comet-flow-demo`
 
 ### 3.7 部署仓库：`stellar-deploy`
 
@@ -282,13 +249,9 @@ stellar-deploy/
 - `docker-compose/dev-stack`
 - `kubernetes/starmap`
 - `kubernetes/nebula`
-- `helm/taiji-flow`
+- `helm/comet-flow`
 
-#### 初始化完成标准
-
-- 至少一套本地开发部署清单可运行
-
-### 3.8 AI 聚合仓库：`spirit-axis`
+### 3.8 AI 聚合仓库：`astral-layer`
 
 #### 第一步创建
 
@@ -297,24 +260,19 @@ stellar-deploy/
 #### 第二步创建目录
 
 ```text
-spirit-axis/
+astral-layer/
 ├── docs/
-├── zhongfu-engine/
-├── dachu-memory/
-├── sui-agent/
+├── quasar-engine/
+├── starvault-memory/
+├── orbit-agent/
 ├── protocols/
-│   ├── xian-mcp/
-│   ├── heng-mcp/
-│   └── meng-mcp/
+│   ├── sensor-mcp/
+│   ├── vector-mcp/
+│   └── guidestar-mcp/
 ├── sdk/
 ├── examples/
 └── deploy/
 ```
-
-#### 初始化完成标准
-
-- 目录骨架齐备
-- MCP 协议族占位模块存在
 
 ### 3.9 核心产品仓库初始化模板
 
@@ -322,13 +280,13 @@ spirit-axis/
 
 - `starmap`
 - `nebula`
-- `lightbeam`
+- `startrace`
 - `orbit`
 - `pulsar`
-- `chronos`
+- `astrolabe`
 - `singularity`
 - `event-horizon`
-- `taiji-flow`
+- `comet-flow`
 
 #### 第一步创建
 
@@ -391,32 +349,20 @@ spirit-axis/
 - `sidecars/{product}-sidecar`
 - `operators/{product}-operator`
 
-#### 初始化完成标准
-
-- `api`、`server`、`clients`、`deploy`、`test` 五大主目录齐备
-- 至少一份公开接口定义存在
-- 至少一个服务端占位入口存在
-
 ### 3.10 第一批核心仓库 Bootstrap 顺序
 
 建议按以下顺序初始化：
 
 1. `stellar-axis`
-2. `stellar-steel`
-3. `stellar-titan`
+2. `stellar-core`
+3. `stellar-pulse`
 4. `starmap`
 5. `nebula`
 6. `orbit`
-7. `taiji-flow`
+7. `comet-flow`
 8. `stellar-examples`
 9. `stellar-control-plane`
 10. `stellarctl`
-
-#### 原因
-
-- 先完成规则与聚合入口
-- 再完成四个主链路产品
-- 最后补齐示例、控制面和 CLI
 
 ### 3.11 初始化检查清单
 
@@ -433,18 +379,18 @@ spirit-axis/
 
 以下内容可作为初始化摘要直接复用：
 
-```md
+~~~md
 # Repository Bootstrap Plan
 
 ## 第一批先建
 
 - `stellar-axis`
-- `stellar-steel`
-- `stellar-titan`
+- `stellar-core`
+- `stellar-pulse`
 - `starmap`
 - `nebula`
 - `orbit`
-- `taiji-flow`
+- `comet-flow`
 
 ## 聚合仓库最小要求
 
@@ -461,11 +407,4 @@ spirit-axis/
 - `clients/`
 - `deploy/`
 - `test/`
-
-## 初始化完成标准
-
-1. 目录结构与规范一致
-2. README 到位
-3. 构建入口可执行
-4. 至少一个占位模块可编译
-```
+~~~
