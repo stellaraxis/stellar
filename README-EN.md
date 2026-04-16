@@ -46,6 +46,7 @@ All core products follow this unified display rule:
 | Distributed Locking | `Singularity` | `奇点` |
 | Gateway | `EventHorizon` | `视界` |
 | Messaging | `CometFlow` | `彗流` |
+| Logging Platform | `Spectrum` | `星谱` |
 | Metrics Platform | `Constellation` | `星座` |
 | Alerting Platform | `NovaSignal` | `星讯` |
 | Zero Trust Platform | `StarShield` | `星盾` |
@@ -56,6 +57,7 @@ Recommended display examples:
 - `StarMap · 星图`
 - `Nebula · 星云`
 - `StarTrace · 星迹`
+- `Spectrum · 星谱`
 - `Orbit · 星轨`
 - `CometFlow · 彗流`
 
@@ -115,41 +117,27 @@ Common examples:
 - `orbit-governance-starter`
 - `comet-flow-client`
 
-### Final OTel SDK Naming
+### Final Logging SDK Naming
 
-OpenTelemetry-related SDKs follow this final pattern:
-
-> `{product}-otel-{signal}-{lang}-sdk`
-
-Where:
-
-- `{product}` is the product ownership, such as `startrace`
-- `{signal}` is the signal type, such as `logs`, `traces`, or `metrics`
-- `{lang}` is the language dimension, such as `java` or `go`
+`Spectrum` is the official product name for the logging platform. Its external SDKs use simplified names and do not include `otel` or signal-type markers in the primary SDK name.
 
 The finalized names are:
 
-- `startrace-otel-logs-java-sdk`
-- `startrace-otel-logs-go-sdk`
+- `spectrum-java-sdk`
+- `spectrum-go-sdk`
 
 Coordinate examples:
 
-- `io.stellar.axis:startrace-otel-logs-java-sdk`
-- `io.stellar.axis:startrace-otel-logs-go-sdk`
+- `io.stellar.axis:spectrum-java-sdk`
+- `io.stellar.axis:spectrum-go-sdk`
 
-Future extension examples:
+Naming semantics:
 
-- `startrace-otel-traces-java-sdk`
-- `startrace-otel-metrics-java-sdk`
-- `startrace-otel-traces-go-sdk`
-- `startrace-otel-metrics-go-sdk`
+- `spectrum` is the product ownership for the logging platform
+- `java` and `go` represent the language dimension
+- `sdk` represents the engineering role
 
-If a language-level aggregation module is needed in the future, the following names may be used:
-
-- `startrace-otel-java-sdk`
-- `startrace-otel-go-sdk`
-
-These aggregate names are reserved for umbrella modules and should not be used for the concrete `logs` SDK.
+`OpenTelemetry` may still exist as an internal implementation or integration capability, but it is not part of the current external SDK naming.
 
 ### Java Package Naming Examples
 
@@ -203,6 +191,7 @@ The ecosystem uses a three-layer structure: aggregate repositories, core product
 - `singularity`
 - `event-horizon`
 - `comet-flow`
+- `spectrum`
 
 ### Unified Product Repository Skeleton
 
@@ -265,7 +254,7 @@ This repository has frozen the following final decisions:
 3. Repositories, modules, package names, and dependency coordinates use English engineering names only
 4. Repository topology is fixed as aggregate repositories, core product repositories, and supporting repositories
 5. Cross-product collaboration must happen through public APIs, SDKs, events, and control-plane interfaces
-6. The finalized OpenTelemetry Logs SDK names are `startrace-otel-logs-java-sdk` and `startrace-otel-logs-go-sdk`
+6. The finalized logging platform name is `Spectrum · 星谱`, and its SDK names are `spectrum-java-sdk` and `spectrum-go-sdk`
 
 ## License
 

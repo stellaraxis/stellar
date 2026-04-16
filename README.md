@@ -46,6 +46,7 @@
 | 分布式锁 | `Singularity` | `奇点` |
 | 网关入口 | `EventHorizon` | `视界` |
 | 消息队列 | `CometFlow` | `彗流` |
+| 日志平台 | `Spectrum` | `星谱` |
 | 指标平台 | `Constellation` | `星座` |
 | 告警平台 | `NovaSignal` | `星讯` |
 | 零信任平台 | `StarShield` | `星盾` |
@@ -56,6 +57,7 @@
 - `StarMap · 星图`
 - `Nebula · 星云`
 - `StarTrace · 星迹`
+- `Spectrum · 星谱`
 - `Orbit · 星轨`
 - `CometFlow · 彗流`
 
@@ -115,41 +117,27 @@
 - `orbit-governance-starter`
 - `comet-flow-client`
 
-### OTel SDK 命名最终结论
+### 日志平台 SDK 命名最终结论
 
-OpenTelemetry 相关 SDK 统一采用：
-
-> `{product}-otel-{signal}-{lang}-sdk`
-
-其中：
-
-- `{product}` 表示产品归属，例如 `startrace`
-- `{signal}` 表示信号类型，例如 `logs`、`traces`、`metrics`
-- `{lang}` 表示语言维度，例如 `java`、`go`
+`Spectrum` 作为日志平台主名，对外 SDK 统一采用简化命名，不再把 `otel` 或信号类型写入 SDK 主名称。
 
 当前已经冻结的最终命名如下：
 
-- `startrace-otel-logs-java-sdk`
-- `startrace-otel-logs-go-sdk`
+- `spectrum-java-sdk`
+- `spectrum-go-sdk`
 
 对应坐标示例：
 
-- `io.stellar.axis:startrace-otel-logs-java-sdk`
-- `io.stellar.axis:startrace-otel-logs-go-sdk`
+- `io.stellar.axis:spectrum-java-sdk`
+- `io.stellar.axis:spectrum-go-sdk`
 
-扩展示例如下：
+命名含义如下：
 
-- `startrace-otel-traces-java-sdk`
-- `startrace-otel-metrics-java-sdk`
-- `startrace-otel-traces-go-sdk`
-- `startrace-otel-metrics-go-sdk`
+- `spectrum` 表示日志平台产品归属
+- `java`、`go` 表示语言维度
+- `sdk` 表示工程角色
 
-如果未来需要语言级聚合模块，可单独使用：
-
-- `startrace-otel-java-sdk`
-- `startrace-otel-go-sdk`
-
-但这两个名称只建议用于聚合层，不建议用于具体的 `logs` SDK。
+`OpenTelemetry` 可作为内部实现能力或适配能力存在，但不进入当前对外 SDK 主命名。
 
 ### Java 包名建议
 
@@ -203,6 +191,7 @@ OpenTelemetry 相关 SDK 统一采用：
 - `singularity`
 - `event-horizon`
 - `comet-flow`
+- `spectrum`
 
 ### 单产品统一目录骨架
 
@@ -265,7 +254,7 @@ OpenTelemetry 相关 SDK 统一采用：
 3. 仓库、模块、包名、依赖坐标统一只使用英文工程名
 4. 仓库结构固定为聚合仓库、核心产品仓库和配套能力仓库三层
 5. 跨产品协作统一通过公开 API、SDK、事件和控制面完成
-6. OpenTelemetry Logs SDK 最终命名固定为 `startrace-otel-logs-java-sdk` 与 `startrace-otel-logs-go-sdk`
+6. 日志平台最终命名固定为 `Spectrum · 星谱`，对应 SDK 命名固定为 `spectrum-java-sdk` 与 `spectrum-go-sdk`
 
 ## License
 
