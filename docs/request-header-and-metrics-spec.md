@@ -1,6 +1,6 @@
-# Stellar Axis 全局请求 Header 与指标规范
+# Stell Hub 全局请求 Header 与指标规范
 
-本文档定义 `Stellar Axis（星轴）` 体系下所有中间件、所有业务服务统一遵循的请求 Header 规范与指标规范。
+本文档定义 `Stell Hub（星级枢纽）` 体系下所有中间件、所有业务服务统一遵循的请求 Header 规范与指标规范。
 
 设计目标如下：
 

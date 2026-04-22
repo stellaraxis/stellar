@@ -1,0 +1,253 @@
+:root {
+  --vp-c-brand-1: #c97816;
+  --vp-c-brand-2: #e2942a;
+  --vp-c-brand-3: #a85f0f;
+  --vp-c-brand-soft: rgba(201, 120, 22, 0.14);
+  --vp-nav-bg-color: rgba(255, 250, 244, 0.82);
+  --vp-nav-screen-bg-color: rgba(255, 248, 238, 0.96);
+  --stell-nav-text: #5c3510;
+  --stell-nav-muted: #7b5221;
+  --stell-nav-border: rgba(201, 120, 22, 0.18);
+  --stell-nav-hover-bg: rgba(201, 120, 22, 0.12);
+  --stell-nav-active-bg: linear-gradient(135deg, rgba(243, 180, 83, 0.24), rgba(201, 120, 22, 0.14));
+  --stell-nav-shadow: 0 10px 28px rgba(111, 67, 16, 0.08);
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(120deg, #f3b453 0%, #c97816 45%, #7d4d14 100%);
+  --vp-home-hero-image-background-image: radial-gradient(circle at center, rgba(243, 180, 83, 0.28) 0%, rgba(201, 120, 22, 0.08) 48%, transparent 72%);
+}
+
+.dark {
+  --vp-nav-bg-color: rgba(16, 18, 24, 0.86);
+  --vp-nav-screen-bg-color: rgba(16, 18, 24, 0.98);
+  --stell-nav-text: #f7d7a9;
+  --stell-nav-muted: #e6bd84;
+  --stell-nav-border: rgba(230, 189, 132, 0.18);
+  --stell-nav-hover-bg: rgba(230, 189, 132, 0.12);
+  --stell-nav-active-bg: linear-gradient(135deg, rgba(230, 189, 132, 0.2), rgba(201, 120, 22, 0.16));
+  --stell-nav-shadow: 0 12px 32px rgba(0, 0, 0, 0.32);
+}
+
+.VPFeature {
+  border: 1px solid rgba(201, 120, 22, 0.12);
+}
+
+.VPContent.is-home {
+  background:
+    radial-gradient(circle at top, rgba(243, 180, 83, 0.12), transparent 38%),
+    linear-gradient(180deg, rgba(255, 249, 240, 0.86), rgba(255, 255, 255, 1));
+}
+
+.dark .VPContent.is-home {
+  background:
+    radial-gradient(circle at top, rgba(201, 120, 22, 0.16), transparent 34%),
+    linear-gradient(180deg, rgba(15, 17, 23, 1), rgba(10, 12, 18, 1));
+}
+
+.VPNavBar {
+  background: var(--vp-nav-bg-color);
+  border-bottom: 1px solid var(--stell-nav-border);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--stell-nav-shadow);
+}
+
+.VPNavBarTitle .title,
+.VPNavBarTitle .VPImage.logo + span {
+  color: var(--stell-nav-text);
+}
+
+.VPNavBarMenuLink,
+.VPFlyout .button,
+.VPNavBarExtra .VPLink,
+.VPNavBarExtra button {
+  color: var(--stell-nav-muted);
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.VPNavBarMenuLink:hover,
+.VPFlyout:hover .button,
+.VPFlyout .button:hover,
+.VPNavBarExtra .VPLink:hover,
+.VPNavBarExtra button:hover {
+  color: var(--stell-nav-text);
+}
+
+.VPNavBarMenuLink,
+.VPFlyout .button {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0 12px;
+}
+
+.VPNavBarMenuLink:hover,
+.VPFlyout .button:hover,
+.VPFlyout:hover .button {
+  background: var(--stell-nav-hover-bg);
+  border-color: var(--stell-nav-border);
+}
+
+.VPNavBarMenuLink.active,
+.VPFlyout.active .button {
+  color: var(--stell-nav-text);
+  background: var(--stell-nav-active-bg);
+  border-color: var(--stell-nav-border);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.VPFlyout .menu {
+  background: color-mix(in srgb, var(--vp-nav-screen-bg-color) 92%, transparent);
+  border: 1px solid var(--stell-nav-border);
+  border-radius: 18px;
+  box-shadow: var(--stell-nav-shadow);
+  backdrop-filter: blur(18px);
+}
+
+.VPFlyout .link {
+  color: var(--stell-nav-muted);
+  border-radius: 12px;
+}
+
+.VPFlyout .link:hover,
+.VPFlyout .link.active {
+  color: var(--stell-nav-text);
+  background: var(--stell-nav-hover-bg);
+}
+
+.VPNavScreen {
+  background: var(--vp-nav-screen-bg-color);
+}
+
+.product-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 28px;
+  padding: 24px;
+  border: 1px solid rgba(201, 120, 22, 0.14);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top, rgba(243, 180, 83, 0.12), transparent 55%),
+    linear-gradient(180deg, rgba(255, 248, 239, 0.96), rgba(255, 255, 255, 0.98));
+}
+
+.product-logo img {
+  display: block;
+  max-width: 220px;
+  max-height: 132px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.dark .product-logo {
+  border-color: rgba(230, 189, 132, 0.16);
+  background:
+    radial-gradient(circle at top, rgba(230, 189, 132, 0.14), transparent 55%),
+    linear-gradient(180deg, rgba(20, 24, 32, 0.96), rgba(13, 16, 22, 0.98));
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin: 24px 0 32px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid rgba(201, 120, 22, 0.14);
+  border-radius: 24px;
+  text-decoration: none;
+  color: inherit;
+  background:
+    radial-gradient(circle at top, rgba(243, 180, 83, 0.12), transparent 52%),
+    linear-gradient(180deg, rgba(255, 249, 241, 0.98), rgba(255, 255, 255, 0.98));
+  box-shadow: 0 14px 32px rgba(111, 67, 16, 0.08);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(201, 120, 22, 0.24);
+  box-shadow: 0 18px 38px rgba(111, 67, 16, 0.12);
+}
+
+.product-card-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 116px;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.56);
+  border: 1px solid rgba(201, 120, 22, 0.1);
+}
+
+.product-card-logo img {
+  max-width: 132px;
+  max-height: 72px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.product-card-domain {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(201, 120, 22, 0.1);
+  color: var(--stell-nav-text);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.product-card-title {
+  margin: 0;
+  color: var(--stell-nav-text);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.product-card-desc {
+  margin: 0;
+  color: var(--stell-nav-muted);
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.product-card-link {
+  margin-top: auto;
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+}
+
+.dark .product-card {
+  border-color: rgba(230, 189, 132, 0.16);
+  background:
+    radial-gradient(circle at top, rgba(230, 189, 132, 0.12), transparent 52%),
+    linear-gradient(180deg, rgba(20, 24, 32, 0.98), rgba(13, 16, 22, 0.98));
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.28);
+}
+
+.dark .product-card:hover {
+  border-color: rgba(230, 189, 132, 0.26);
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.34);
+}
+
+.dark .product-card-logo {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(230, 189, 132, 0.12);
+}
+
+@media (max-width: 640px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}

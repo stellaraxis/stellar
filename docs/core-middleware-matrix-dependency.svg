@@ -76,7 +76,7 @@
   <circle cx="190" cy="980" r="260" fill="#4B2F60" fill-opacity="0.12"/>
   <circle cx="420" cy="130" r="180" fill="#194B4A" fill-opacity="0.08"/>
 
-  <text x="72" y="74" class="title">星轴核心中间件矩阵层级依赖图</text>
+  <text x="72" y="74" class="title">星级枢纽核心中间件矩阵层级依赖图</text>
   <text x="72" y="106" class="subtitle">基于 README.md 的职责定义与依赖边界整理，表达“推荐的公开依赖方向”，而非服务端之间的直接实现耦合。</text>
 
   <rect x="60" y="150" width="1480" height="170" rx="28" fill="url(#band1)" stroke="#4C7BB7" stroke-opacity="0.45"/>
