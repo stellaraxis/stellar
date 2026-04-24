@@ -63,13 +63,16 @@
 .VPContent.is-home::after {
   content: "";
   position: absolute;
-  inset: auto 6% 12% auto;
-  width: 220px;
-  height: 220px;
-  border: 1px solid rgba(147, 183, 255, 0.1);
-  border-radius: 18px;
-  background: linear-gradient(180deg, rgba(95, 216, 255, 0.04), rgba(139, 124, 255, 0.02));
-  filter: blur(1px);
+  left: 50%;
+  top: 64px;
+  width: min(72vw, 980px);
+  height: min(72vw, 980px);
+  transform: translateX(-50%);
+  background:
+    radial-gradient(circle at center, rgba(95, 216, 255, 0.2), transparent 42%),
+    url("/logo/logo.png") center / contain no-repeat;
+  opacity: 0.3;
+  filter: blur(7px) saturate(1.08);
   pointer-events: none;
 }
 
@@ -83,6 +86,7 @@
     "$ tree ./docs\a"
     ".\a"
     "|-- topics/\a"
+    "|   |-- observability-spec.md\a"
     "|   |-- middleware-evolution.md\a"
     "|   `-- distributed-consistency.md\a"
     "|-- products/\a"
@@ -90,8 +94,7 @@
     "|   |   `-- index.md\a"
     "|   |-- stellnula/\a"
     "|   |   `-- index.md\a"
-    "|   `-- observability-spec.md\a"
-    "`-- overview.md\a\a"
+    "|   `-- ...\a\a"
     "$ status\a"
     "style = minimal\a"
     "theme = starfield\a"
@@ -113,6 +116,27 @@
   pointer-events: none;
   user-select: none;
   backdrop-filter: blur(3px);
+}
+
+.VPContent.is-home .VPHome::after {
+  content: "chenwenlong";
+  position: absolute;
+  right: clamp(36px, 8vw, 112px);
+  top: clamp(340px, 44vw, 640px);
+  z-index: 0;
+  font-size: clamp(22px, 3vw, 42px);
+  font-weight: 600;
+  letter-spacing: 0.48em;
+  text-transform: lowercase;
+  color: rgba(151, 212, 255, 0.1);
+  text-shadow:
+    0 0 18px rgba(95, 216, 255, 0.12),
+    0 0 44px rgba(139, 124, 255, 0.08);
+  filter: blur(1.4px);
+  transform: rotate(-10deg);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
 }
 
 .VPNavBar {
@@ -889,6 +913,128 @@
     linear-gradient(180deg, rgba(20, 24, 32, 0.96), rgba(13, 16, 22, 0.98));
 }
 
+.vp-doc[class*="_products_stell"] {
+  position: relative;
+  isolation: isolate;
+}
+
+.vp-doc[class*="_products_stell"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: var(--stellar-product-logo);
+  background-repeat: no-repeat;
+  background-position: center 110px;
+  background-size: min(58vw, 760px);
+  opacity: 0.24;
+  filter: blur(9px) saturate(1.14);
+  transform: scale(1.08);
+}
+
+.vp-doc[class*="_products_stell"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at center 115px, rgba(95, 216, 255, 0.14), transparent 44%),
+    linear-gradient(180deg, rgba(8, 16, 31, 0.02), rgba(8, 16, 31, 0.52) 24%, rgba(8, 16, 31, 0.84) 100%);
+}
+
+body[data-stellar-product-view="home"] .vp-doc[class*="_products_stell"]::before {
+  background-position: center 96px;
+  background-size: min(62vw, 860px);
+  opacity: 0.34;
+  filter: blur(7px) saturate(1.18);
+}
+
+body[data-stellar-product-view="home"] .vp-doc[class*="_products_stell"]::after {
+  background:
+    radial-gradient(circle at center 108px, rgba(95, 216, 255, 0.18), transparent 46%),
+    linear-gradient(180deg, rgba(8, 16, 31, 0.01), rgba(8, 16, 31, 0.44) 24%, rgba(8, 16, 31, 0.8) 100%);
+}
+
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"]::before {
+  background-position: center 118px;
+  background-size: min(50vw, 680px);
+  opacity: 0.18;
+  filter: blur(11px) saturate(1.1);
+}
+
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"]::after {
+  background:
+    radial-gradient(circle at center 118px, rgba(95, 216, 255, 0.1), transparent 42%),
+    linear-gradient(180deg, rgba(8, 16, 31, 0.03), rgba(8, 16, 31, 0.58) 24%, rgba(8, 16, 31, 0.87) 100%);
+}
+
+.vp-doc[class*="_products_stell"] > * {
+  position: relative;
+  z-index: 1;
+}
+
+.vp-doc[class*="_products_stell"] .product-logo {
+  display: none;
+}
+
+.vp-doc[class*="_products_stellmap"] {
+  --stellar-product-logo: url("/logo/stellmap.png");
+}
+
+.vp-doc[class*="_products_stellnula"] {
+  --stellar-product-logo: url("/logo/stellnula.png");
+}
+
+.vp-doc[class*="_products_stelltrace"] {
+  --stellar-product-logo: url("/logo/stelltrace.png");
+}
+
+.vp-doc[class*="_products_stellorbit"] {
+  --stellar-product-logo: url("/logo/stellorbit.png");
+}
+
+.vp-doc[class*="_products_stellpulse"] {
+  --stellar-product-logo: url("/logo/stellpulse.png");
+}
+
+.vp-doc[class*="_products_stellabe"] {
+  --stellar-product-logo: url("/logo/stellabe.png");
+}
+
+.vp-doc[class*="_products_stellpoint"] {
+  --stellar-product-logo: url("/logo/stellpoint.png");
+}
+
+.vp-doc[class*="_products_stellgate"] {
+  --stellar-product-logo: url("/logo/stellgate.png");
+}
+
+.vp-doc[class*="_products_stellflow"] {
+  --stellar-product-logo: url("/logo/stellflow.png");
+}
+
+.vp-doc[class*="_products_stellspec"] {
+  --stellar-product-logo: url("/logo/stellspec.png");
+}
+
+.vp-doc[class*="_products_stellcon"] {
+  --stellar-product-logo: url("/logo/stellcon.png");
+}
+
+.vp-doc[class*="_products_stellvox"] {
+  --stellar-product-logo: url("/logo/stellvox.png");
+}
+
+.vp-doc[class*="_products_stellguard"] {
+  --stellar-product-logo: url("/logo/stellguard.png");
+}
+
+.vp-doc[class*="_products_stellkey"] {
+  --stellar-product-logo: url("/logo/stellkey.png");
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -1097,13 +1243,13 @@
 }
 
 .stellar-home-simple {
-  max-width: 960px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 20px 24px 8px;
 }
 
 .stellar-home-wide {
-  max-width: 1560px;
+  max-width: 1760px;
   margin: 0 auto;
   padding: 20px 24px 8px;
 }
@@ -1147,6 +1293,7 @@
   background: linear-gradient(180deg, rgba(8, 16, 31, 0.74), rgba(8, 16, 31, 0.52));
   box-shadow: 0 18px 40px rgba(2, 6, 18, 0.16);
   backdrop-filter: blur(10px);
+  overflow: hidden;
 }
 
 .stellar-home-graph h2 {
@@ -1171,13 +1318,591 @@
   background: rgba(7, 14, 28, 0.9);
 }
 
+.stellar-home-matrix {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  padding: 24px;
+  border: 1px solid rgba(149, 194, 255, 0.14);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(8, 16, 31, 0.74), rgba(8, 16, 31, 0.52));
+  box-shadow: 0 18px 40px rgba(2, 6, 18, 0.16);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.stellar-home-matrix::before,
+.stellar-home-graph::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(29, 61, 103, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 61, 103, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+.stellar-home-matrix::after,
+.stellar-home-graph::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(47, 95, 152, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47, 95, 152, 0.16) 1px, transparent 1px);
+  background-size: 120px 120px;
+  pointer-events: none;
+}
+
+.stellar-home-matrix > *,
+.stellar-home-graph > * {
+  position: relative;
+  z-index: 1;
+}
+
+.stellar-home-matrix h2 {
+  margin: 0 0 16px;
+  color: #f5f9ff;
+  font-size: 24px;
+  line-height: 1.35;
+}
+
+.stellar-home-capability-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 18px;
+}
+
+.stellar-home-capability-legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 36px;
+  padding: 7px 12px;
+  border: 1px solid rgba(95, 216, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(10, 25, 44, 0.72);
+  color: rgba(224, 235, 251, 0.84);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.stellar-home-capability-legend__swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  box-shadow: 0 0 12px currentColor;
+}
+
+.stellar-home-capability-legend__item.is-access .stellar-home-capability-legend__swatch {
+  background: #72deff;
+  color: #72deff;
+}
+
+.stellar-home-capability-legend__item.is-runtime .stellar-home-capability-legend__swatch {
+  background: #7ed9aa;
+  color: #7ed9aa;
+}
+
+.stellar-home-capability-legend__item.is-foundation .stellar-home-capability-legend__swatch {
+  background: #e7be72;
+  color: #e7be72;
+}
+
+.stellar-home-capability-legend__item.is-observe .stellar-home-capability-legend__swatch {
+  background: #b8a2ff;
+  color: #b8a2ff;
+}
+
+.stellar-home-matrix__table {
+  overflow: visible;
+}
+
+.stellar-home-matrix table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.stellar-home-matrix__col-id {
+  width: 9%;
+}
+
+.stellar-home-matrix__col-domain {
+  width: 10%;
+}
+
+.stellar-home-matrix__col-origin {
+  width: 18%;
+}
+
+.stellar-home-matrix__col-name {
+  width: 18%;
+}
+
+.stellar-home-matrix__col-logic {
+  width: 45%;
+}
+
+.stellar-home-matrix th,
+.stellar-home-matrix td {
+  padding: 14px 16px;
+  border: 1px solid rgba(149, 194, 255, 0.12);
+  text-align: left;
+  line-height: 1.7;
+}
+
+.stellar-home-matrix th {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  color: #f5f9ff;
+  background:
+    linear-gradient(180deg, rgba(13, 28, 52, 0.94), rgba(9, 21, 42, 0.92));
+  vertical-align: top;
+}
+
+.stellar-home-matrix__tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border: 1px solid rgba(95, 216, 255, 0.26);
+  border-radius: 999px;
+  background: rgba(13, 34, 57, 0.72);
+  color: #8fe7ff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.stellar-home-matrix td {
+  color: rgba(222, 233, 250, 0.82);
+  background: rgba(9, 19, 36, 0.58);
+  vertical-align: top;
+  word-break: break-word;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.stellar-home-matrix td:first-child {
+  text-align: center;
+}
+
+.stellar-home-matrix tbody tr {
+  cursor: pointer;
+}
+
+.stellar-home-matrix tbody tr[data-group="access"] td:first-child {
+  box-shadow: inset 4px 0 0 #72deff;
+}
+
+.stellar-home-matrix tbody tr[data-group="runtime"] td:first-child {
+  box-shadow: inset 4px 0 0 #7ed9aa;
+}
+
+.stellar-home-matrix tbody tr[data-group="foundation"] td:first-child {
+  box-shadow: inset 4px 0 0 #e7be72;
+}
+
+.stellar-home-matrix tbody tr[data-group="observe"] td:first-child {
+  box-shadow: inset 4px 0 0 #b8a2ff;
+}
+
+.stellar-home-matrix tbody tr.is-active td {
+  border-color: rgba(143, 231, 255, 0.24);
+  background-color: rgba(11, 24, 43, 0.86);
+}
+
+.stellar-home-matrix__id {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 56px;
+  min-height: 32px;
+  padding: 4px 10px;
+  border: 1px solid rgba(95, 216, 255, 0.22);
+  border-radius: 999px;
+  background: rgba(11, 31, 49, 0.72);
+  color: #8fe7ff;
+  font-family: "Cascadia Code", "JetBrains Mono", Consolas, "Courier New", monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.stellar-home-matrix td:nth-child(4) {
+  background:
+    linear-gradient(180deg, rgba(11, 33, 53, 0.84), rgba(9, 26, 44, 0.72));
+  box-shadow:
+    inset 0 0 0 1px rgba(95, 216, 255, 0.14),
+    inset 0 0 18px rgba(95, 216, 255, 0.04);
+}
+
+.stellar-home-matrix td a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 6px 12px;
+  border: 1px solid rgba(95, 216, 255, 0.34);
+  border-radius: 10px;
+  background: rgba(12, 30, 48, 0.86);
+  color: #8fe7ff;
+  font-family: "Cascadia Code", "JetBrains Mono", Consolas, "Courier New", monospace;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  box-shadow:
+    0 0 0 1px rgba(95, 216, 255, 0.08),
+    0 0 16px rgba(95, 216, 255, 0.08);
+}
+
+.stellar-home-matrix tbody tr:hover td:nth-child(4) {
+  background:
+    linear-gradient(180deg, rgba(12, 40, 64, 0.92), rgba(10, 30, 50, 0.84));
+  box-shadow:
+    inset 0 0 0 1px rgba(95, 216, 255, 0.22),
+    inset 0 0 24px rgba(95, 216, 255, 0.06);
+}
+
+.stellar-home-matrix tbody tr.is-active td:nth-child(4) {
+  background:
+    linear-gradient(180deg, rgba(13, 47, 74, 0.96), rgba(10, 34, 55, 0.9));
+  box-shadow:
+    inset 0 0 0 1px rgba(143, 231, 255, 0.3),
+    inset 0 0 28px rgba(95, 216, 255, 0.1);
+}
+
+.stellar-home-matrix td a:hover {
+  color: #f5f9ff;
+  border-color: rgba(143, 231, 255, 0.4);
+  background: rgba(15, 39, 61, 0.92);
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 0 1px rgba(143, 231, 255, 0.18),
+    0 0 22px rgba(95, 216, 255, 0.18);
+}
+
+.stellar-home-matrix tbody tr.is-active td a {
+  color: #f5f9ff;
+  border-color: rgba(143, 231, 255, 0.42);
+  background: rgba(15, 39, 61, 0.94);
+  box-shadow:
+    0 0 0 1px rgba(143, 231, 255, 0.2),
+    0 0 24px rgba(95, 216, 255, 0.22);
+}
+
+.stellar-home-blueprint {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2200 / 1210;
+  min-height: 0;
+  border: 1px solid rgba(149, 194, 255, 0.12);
+  border-radius: 12px;
+  background: rgba(7, 14, 28, 0.9);
+}
+
 @media (max-width: 640px) {
   .stellar-home-wide {
     padding: 20px 16px 8px;
   }
 
   .stellar-home-intro,
-  .stellar-home-graph {
+  .stellar-home-graph,
+  .stellar-home-matrix {
     padding: 20px 18px;
+  }
+
+  .stellar-home-blueprint {
+    aspect-ratio: 2200 / 1210;
+  }
+}
+
+.forum-index {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 8px 24px 24px;
+}
+
+.forum-section {
+  margin: 0 0 24px;
+  padding: 26px 28px;
+  border: 1px solid rgba(149, 194, 255, 0.14);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(9, 17, 34, 0.94), rgba(8, 16, 31, 0.9));
+  box-shadow: 0 20px 48px rgba(2, 6, 18, 0.18);
+}
+
+.forum-section--compact {
+  padding-bottom: 22px;
+}
+
+.forum-section__head {
+  margin-bottom: 18px;
+}
+
+.forum-section__head h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.forum-section__head p {
+  margin: 8px 0 0;
+  color: rgba(208, 222, 245, 0.72);
+}
+
+.forum-post-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.forum-post-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 100%;
+  padding: 22px;
+  border: 1px solid rgba(149, 194, 255, 0.12);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(12, 21, 41, 0.92), rgba(8, 16, 31, 0.84));
+  color: inherit;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.forum-post-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(143, 231, 255, 0.22);
+  box-shadow: 0 16px 32px rgba(2, 6, 18, 0.22);
+}
+
+.forum-post-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.forum-post-card__category,
+.forum-post-card__date {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.forum-post-card__category {
+  border: 1px solid rgba(95, 216, 255, 0.22);
+  background: rgba(10, 31, 50, 0.78);
+  color: #8fe7ff;
+}
+
+.forum-post-card__date {
+  border: 1px solid rgba(149, 194, 255, 0.14);
+  background: rgba(12, 25, 45, 0.72);
+  color: rgba(213, 226, 248, 0.8);
+}
+
+.forum-post-card h3 {
+  margin: 0;
+  color: #f5f9ff;
+  font-size: 22px;
+  line-height: 1.45;
+}
+
+.forum-post-card__summary,
+.forum-post-card__direction {
+  margin: 0;
+  color: rgba(221, 232, 250, 0.8);
+  line-height: 1.85;
+}
+
+.forum-post-card__direction strong {
+  color: #f5f9ff;
+}
+
+.forum-post-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.forum-post-card__tags span,
+.forum-topic-chips span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 5px 11px;
+  border: 1px solid rgba(149, 194, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(10, 22, 40, 0.68);
+  color: rgba(218, 230, 249, 0.8);
+  font-size: 13px;
+}
+
+.forum-topic-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 5px 11px;
+  border: 1px solid rgba(149, 194, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(10, 22, 40, 0.68);
+  color: rgba(218, 230, 249, 0.8);
+  font-size: 13px;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.forum-topic-chip:hover,
+.forum-topic-chip.is-active {
+  border-color: rgba(143, 231, 255, 0.28);
+  background: rgba(11, 33, 53, 0.84);
+  color: #f5f9ff;
+  box-shadow: 0 0 0 1px rgba(95, 216, 255, 0.08);
+}
+
+.forum-category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.forum-category-card {
+  padding: 20px 22px;
+  border: 1px solid rgba(149, 194, 255, 0.12);
+  border-radius: 18px;
+  background: rgba(9, 19, 36, 0.64);
+}
+
+.forum-category-card h3 {
+  margin: 0 0 14px;
+  font-size: 18px;
+}
+
+.forum-category-card ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.forum-category-card li + li {
+  margin-top: 8px;
+}
+
+.forum-category-card a {
+  color: #cfe9ff;
+  text-decoration: none;
+}
+
+.forum-category-card a:hover {
+  color: #8fe7ff;
+}
+
+.forum-archive-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.forum-archive-card {
+  padding: 20px 22px;
+  border: 1px solid rgba(149, 194, 255, 0.12);
+  border-radius: 18px;
+  background: rgba(9, 19, 36, 0.64);
+}
+
+.forum-archive-card h3 {
+  margin: 0 0 14px;
+  font-size: 18px;
+}
+
+.forum-archive-card ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.forum-archive-card li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(149, 194, 255, 0.08);
+}
+
+.forum-archive-card li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.forum-archive-card a {
+  color: #cfe9ff;
+  text-decoration: none;
+  line-height: 1.7;
+}
+
+.forum-archive-card a:hover {
+  color: #8fe7ff;
+}
+
+.forum-archive-card span {
+  flex: 0 0 auto;
+  color: rgba(208, 222, 245, 0.62);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.forum-topic-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.forum-empty-state {
+  margin: 18px 0 0;
+  color: rgba(208, 222, 245, 0.72);
+}
+
+@media (max-width: 960px) {
+  .forum-post-grid,
+  .forum-category-grid,
+  .forum-archive-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .forum-index {
+    padding: 8px 16px 20px;
+  }
+
+  .forum-section {
+    padding: 22px 18px;
+    border-radius: 18px;
   }
 }

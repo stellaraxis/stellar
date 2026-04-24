@@ -20,50 +20,29 @@ const productItems = [
       { text: "Stellguard · 星盾", link: "/products/stellguard/" },
       { text: "Stellkey · 星钥", link: "/products/stellkey/" }
     ]
-  },
-  {
-    text: "体系规范",
-    items: [
-      { text: "可观测规范", link: "/products/observability-spec" }
-    ]
   }
 ];
 
 const topicItems = [
-  { text: "专题总览", link: "/topics/" },
+  { text: "论坛首页", link: "/topics/" },
+  { text: "可观测规范", link: "/topics/observability-spec" },
   { text: "为什么企业要自研中间件", link: "/topics/middleware-evolution" },
-  { text: "分布式系统中的一致性挑战及其解决路径", link: "/topics/distributed-consistency" }
-];
-
-const productSectionItems = (link: string) => [
-  { text: "产品定位", link: `${link}#产品定位` },
-  { text: "核心能力", link: `${link}#核心能力` },
-  { text: "概要设计", link: `${link}#概要设计` },
-  { text: "架构组成", link: `${link}#架构组成` },
-  { text: "部署形态", link: `${link}#部署形态` },
-  { text: "快速入门", link: `${link}#快速入门` },
-  { text: "配置建议", link: `${link}#配置建议` },
-  { text: "API 与 SDK", link: `${link}#api-与-sdk` },
-  { text: "可观测性", link: `${link}#可观测性` },
-  { text: "典型场景", link: `${link}#典型场景` }
+  { text: "分布式系统中的一致性挑战及其解决路径", link: "/topics/distributed-consistency" },
+  { text: "分布式系统注册中心意义、问题与主流实现", link: "/topics/distributed-system-registry-centers" }
 ];
 
 const productDetailSidebar = (link: string) => [
   {
-    text: "当前页面",
-    items: productSectionItems(link)
-  }
-];
-
-const observabilitySidebar = [
-  {
-    text: "可观测规范",
+    text: "设计文档",
     items: [
-      { text: "规范定位", link: "/products/observability-spec#规范定位" },
-      { text: "基础环境变量规范", link: "/products/observability-spec#第一部分基础环境变量规范" },
-      { text: "请求上下文规范", link: "/products/observability-spec#第二部分全局请求上下文规范" },
-      { text: "全局指标规范", link: "/products/observability-spec#第三部分全局指标规范" },
-      { text: "落地约束", link: "/products/observability-spec#第四部分平台与业务落地约束" }
+      { text: "产品首页", link },
+      { text: "概要设计", link: `${link}summary-design` },
+      { text: "架构组成", link: `${link}architecture` },
+      { text: "部署形态", link: `${link}deployment` },
+      { text: "快速入门", link: `${link}quick-start` },
+      { text: "配置建议", link: `${link}configuration` },
+      { text: "API 与 SDK", link: `${link}api-and-sdk` },
+      { text: "可观测性", link: `${link}observability` }
     ]
   }
 ];
@@ -87,8 +66,7 @@ export default defineConfig({
     logo: "/logo/logo.png",
     nav: [
       { text: "首页", link: "/" },
-      { text: "专题研究", link: "/topics/" },
-      { text: "体系总览", link: "/overview" },
+      { text: "星际论坛", link: "/topics/" },
       { text: "核心产品", items: productItems }
     ],
     sidebar: {
@@ -106,20 +84,15 @@ export default defineConfig({
       "/products/stellvox/": productDetailSidebar("/products/stellvox/"),
       "/products/stellguard/": productDetailSidebar("/products/stellguard/"),
       "/products/stellkey/": productDetailSidebar("/products/stellkey/"),
-      "/products/observability-spec": observabilitySidebar,
       "/products/": [
         {
           text: "核心产品矩阵",
           items: productItems[0].items
-        },
-        {
-          text: "体系规范",
-          items: productItems[1].items
         }
       ],
       "/topics/": [
         {
-          text: "专题研究",
+          text: "星际论坛",
           items: topicItems
         }
       ],
@@ -128,12 +101,12 @@ export default defineConfig({
           text: "文档导航",
           items: [
             { text: "首页", link: "/" },
-            { text: "专题研究总览", link: "/topics/" },
+            { text: "星际论坛", link: "/topics/" },
+            { text: "可观测规范", link: "/topics/observability-spec" },
             { text: "为什么企业要自研中间件", link: "/topics/middleware-evolution" },
             { text: "分布式系统中的一致性挑战及其解决路径", link: "/topics/distributed-consistency" },
-            { text: "体系总览", link: "/overview" },
+            { text: "分布式系统注册中心意义、问题与主流实现", link: "/topics/distributed-system-registry-centers" },
             { text: "产品总览", link: "/products/" },
-            { text: "可观测规范", link: "/products/observability-spec" },
             { text: "核心中间件矩阵图", link: "/core-middleware-matrix-dependency.svg" }
           ]
         }
