@@ -970,6 +970,153 @@ body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"]::aft
     linear-gradient(180deg, rgba(8, 16, 31, 0.03), rgba(8, 16, 31, 0.58) 24%, rgba(8, 16, 31, 0.87) 100%);
 }
 
+body[data-stellar-product-view="subpage"] .VPContent.has-sidebar {
+  background:
+    radial-gradient(circle at 16% 14%, rgba(95, 216, 255, 0.1), transparent 18%),
+    radial-gradient(circle at 84% 10%, rgba(139, 124, 255, 0.09), transparent 16%),
+    linear-gradient(180deg, #050914 0%, #08101f 34%, #091522 100%);
+}
+
+body[data-stellar-product-view="subpage"] .VPDoc.has-sidebar .content {
+  padding-right: clamp(18px, 3vw, 36px);
+}
+
+body[data-stellar-product-view="subpage"] .VPDoc.has-sidebar .content-container {
+  width: 100%;
+  max-width: 100%;
+}
+
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] {
+  overflow: hidden;
+  padding:
+    clamp(28px, 3vw, 38px)
+    clamp(26px, 3.5vw, 44px)
+    clamp(52px, 5vw, 72px);
+  border: 1px solid rgba(149, 194, 255, 0.14);
+  border-radius: 30px;
+  background:
+    linear-gradient(180deg, rgba(16, 24, 38, 0.95), rgba(20, 31, 48, 0.94));
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.02),
+    0 28px 60px rgba(0, 0, 0, 0.32);
+}
+
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"]::before,
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"]::after {
+  border-radius: inherit;
+}
+
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] h1 {
+  margin-bottom: 20px;
+  color: #f7fbff;
+  font-size: clamp(42px, 4vw, 58px);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+}
+
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] h2 {
+  margin-top: clamp(46px, 5vw, 64px);
+  padding-top: clamp(22px, 2.8vw, 30px);
+  border-top: 1px solid rgba(149, 194, 255, 0.1);
+  color: #f8fbff;
+  font-size: clamp(32px, 2.9vw, 42px);
+  line-height: 1.14;
+}
+
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] h3 {
+  margin-top: 28px;
+  margin-bottom: 18px;
+  color: rgba(242, 248, 255, 0.98);
+  font-size: clamp(24px, 2vw, 30px);
+  line-height: 1.22;
+}
+
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] p,
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] li,
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] blockquote {
+  max-width: none;
+  color: rgba(232, 241, 252, 0.9);
+  font-size: 17px;
+  line-height: 1.9;
+  text-wrap: pretty;
+}
+
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] p,
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] ul,
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] ol,
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] blockquote,
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] pre,
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] div[class*="language-"],
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] table {
+  max-width: none;
+}
+
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] blockquote {
+  margin: 0 0 24px;
+  padding: 18px 22px;
+  border: 1px solid rgba(95, 216, 255, 0.16);
+  border-radius: 22px;
+  background:
+    linear-gradient(135deg, rgba(95, 216, 255, 0.1), rgba(139, 124, 255, 0.06));
+}
+
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] blockquote p {
+  margin: 0;
+  color: rgba(239, 246, 255, 0.92);
+}
+
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] blockquote + p {
+  margin-top: 0;
+}
+
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] blockquote + p > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid rgba(95, 216, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(95, 216, 255, 0.08);
+  color: #8fe7ff;
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] blockquote + p > a:hover {
+  border-color: rgba(95, 216, 255, 0.28);
+  background: rgba(95, 216, 255, 0.14);
+  color: #dff7ff;
+}
+
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] ul,
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] ol {
+  padding-left: 1.3em;
+}
+
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] li + li {
+  margin-top: 10px;
+}
+
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] li::marker {
+  color: rgba(143, 231, 255, 0.88);
+}
+
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] a {
+  text-underline-offset: 0.18em;
+}
+
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] a:not(.header-anchor) {
+  font-weight: 600;
+}
+
+body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] hr {
+  margin: 36px 0;
+  border-color: rgba(149, 194, 255, 0.12);
+}
+
 .vp-doc[class*="_products_stell"] > * {
   position: relative;
   z-index: 1;
@@ -1134,6 +1281,46 @@ body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"]::aft
 .dark .product-card-logo {
   background: rgba(255, 255, 255, 0.03);
   border-color: rgba(149, 194, 255, 0.12);
+}
+
+@media (max-width: 960px) {
+  body[data-stellar-product-view="subpage"] .VPDoc.has-sidebar .content {
+    padding-right: 0;
+  }
+
+  body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] {
+    padding:
+      clamp(22px, 5vw, 28px)
+      clamp(18px, 4vw, 24px)
+      clamp(40px, 7vw, 52px);
+    border-radius: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] h1 {
+    font-size: clamp(34px, 9vw, 42px);
+  }
+
+  body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] h2 {
+    font-size: clamp(26px, 7vw, 32px);
+  }
+
+  body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] h3 {
+    font-size: clamp(20px, 5.6vw, 24px);
+  }
+
+  body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] p,
+  body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] li,
+  body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] blockquote {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  body[data-stellar-product-view="subpage"] .vp-doc[class*="_products_stell"] blockquote {
+    padding: 16px 18px;
+    border-radius: 18px;
+  }
 }
 
 @media (max-width: 960px) {

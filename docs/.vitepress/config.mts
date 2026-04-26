@@ -25,7 +25,10 @@ const productItems = [
 
 const topicItems = [
   { text: "论坛首页", link: "/topics/" },
+  { text: "最佳 DSL 语言：CUE", link: "/topics/dsl" },
+  { text: "面向超大型企业的微服务命名体系研究", link: "/topics/service-naming" },
   { text: "可观测规范", link: "/topics/observability-spec" },
+  { text: "错误码规范", link: "/topics/error-code-spec" },
   { text: "为什么企业要自研中间件", link: "/topics/middleware-evolution" },
   { text: "分布式系统中的一致性挑战及其解决路径", link: "/topics/distributed-consistency" },
   { text: "分布式系统注册中心意义、问题与主流实现", link: "/topics/distributed-system-registry-centers" }
@@ -102,7 +105,10 @@ export default defineConfig({
           items: [
             { text: "首页", link: "/" },
             { text: "星际论坛", link: "/topics/" },
+            { text: "最佳 DSL 语言：CUE", link: "/topics/dsl" },
+            { text: "面向超大型企业的微服务命名体系研究", link: "/topics/service-naming" },
             { text: "可观测规范", link: "/topics/observability-spec" },
+            { text: "错误码规范", link: "/topics/error-code-spec" },
             { text: "为什么企业要自研中间件", link: "/topics/middleware-evolution" },
             { text: "分布式系统中的一致性挑战及其解决路径", link: "/topics/distributed-consistency" },
             { text: "分布式系统注册中心意义、问题与主流实现", link: "/topics/distributed-system-registry-centers" },
