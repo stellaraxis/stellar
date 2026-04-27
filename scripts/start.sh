@@ -38,4 +38,12 @@ npm install
 echo "开始执行 npm run docs:build ..."
 npm run docs:build
 
-echo "构建完成。"
+echo "开始发布静态文件到 Nginx 目录 ..."
+mkdir -p /usr/share/nginx/stellhub
+cp -r docs/.vitepress/dist/* /usr/share/nginx/stellhub/
+
+echo "开始校验并重载 Nginx ..."
+nginx -t
+systemctl reload nginx
+
+echo "构建并发布完成。"
