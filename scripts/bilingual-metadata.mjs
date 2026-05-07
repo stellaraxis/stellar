@@ -313,6 +313,18 @@ export const topics = [
       "Read this when standardizing fault-tolerance policy, handling transient downstream failures, or defining an enterprise-wide retry baseline."
   },
   {
+    slug: "timeout",
+    titleEn: "Timeout Definitions and Configuration in Network Communication",
+    titleZh: "网络通信中的超时定义与设置",
+    categoryEn: "Service Reliability",
+    categoryZh: "服务可靠性",
+    summaryEn:
+      "A structured guide to timeout types, root-cause analysis, observability, and configuration principles across clients, servers, gateways, and gRPC.",
+    tagsEn: ["Timeout", "Network Communication", "gRPC", "Service Reliability"],
+    readingDirectionEn:
+      "Read this when diagnosing timeout failures, designing layered timeout models, or standardizing request deadlines across distributed services."
+  },
+  {
     slug: "observability-spec",
     titleEn: "Observability Specification",
     titleZh: "可观测规范",
