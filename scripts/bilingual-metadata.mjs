@@ -419,5 +419,43 @@ export const topics = [
     tagsEn: ["Throughput", "Performance Optimization", "Zero-Copy", "Pipeline", "Kafka", "Redis"],
     readingDirectionEn:
       "Read this when diagnosing throughput bottlenecks, designing a high-throughput data path, or planning coordinated optimization across network, memory, and storage layers."
+  },
+  {
+    slug: "protocol",
+    titleEn: "Custom Application Protocols over TCP: Kafka, Redis, and MySQL as Case Studies",
+    titleZh: "基于 TCP 的自定义应用层协议研究：以 Kafka、Redis、MySQL 为例",
+    categoryEn: "Network Protocols",
+    categoryZh: "网络协议",
+    summaryEn:
+      "Using Kafka, Redis, and MySQL as examples, this article explains why infrastructure systems design custom application protocols on top of TCP and what that buys them in performance, semantics, and long-term evolution.",
+    tagsEn: ["TCP", "Custom Protocol", "Kafka", "Redis", "MySQL", "gRPC"],
+    readingDirectionEn:
+      "Read this when evaluating transport choices for infrastructure software, comparing HTTP or gRPC with custom protocols, or designing a high-performance middleware wire protocol."
+  },
+  {
+    slug: "ai-microservice",
+    titleEn:
+      "Where Should Internet Applications Go in the AI Era? From Traffic Economy to Compute Economy",
+    titleZh: "AI 时代下，互联网应用应该何去何从：从流量经济到算力经济的范式迁移",
+    categoryEn: "AI Engineering",
+    categoryZh: "AI 工程",
+    summaryEn:
+      "A strategic and engineering analysis of how AI changes internet application economics, covering token cost, model tiering, context infrastructure, workflow automation, value-based pricing, and AI cost governance.",
+    tagsEn: ["AI Applications", "Compute Economy", "Cost Governance", "AI Gateway", "Context Engineering"],
+    readingDirectionEn:
+      "Read this when evaluating AI-enabled product strategy, model routing, cost governance, context infrastructure, or pricing models for internet applications."
+  },
+  {
+    slug: "tuning",
+    titleEn:
+      "Fast Is Not the Same as Good: Local Performance Optimum Is Not Equivalent to System-Wide Optimum",
+    titleZh: "快不等于优：局部性能最优并不等价于系统整体最优",
+    categoryEn: "Performance Engineering",
+    categoryZh: "性能工程",
+    summaryEn:
+      "A systematic analysis of in-container communication choices using OpenTelemetry Collector, configuration sidecars, and log agents, grounded in Amdahl's Law, Little's Law, tail latency, and cloud-native official practices.",
+    tagsEn: ["Performance Tuning", "Container Communication", "IPC", "OpenTelemetry", "Sidecar"],
+    readingDirectionEn:
+      "Read this when evaluating in-container process communication, sidecar data sharing, log collection, telemetry reporting, or shared-memory optimization."
   }
 ];
