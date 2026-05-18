@@ -207,6 +207,19 @@ export const topics = [
       "Read this when evaluating in-container process communication, sidecar data sharing, log collection, telemetry reporting, or shared-memory optimization."
   },
   {
+    slug: "connection",
+    titleEn:
+      "Beware Unintentional Short Connections: How Frequent Middleware Client Creation Causes Connection Avalanches",
+    titleZh: "警惕无意识的“短连接”：深挖中间件客户端频繁创建引发的连接雪崩",
+    categoryEn: "Network Reliability",
+    categoryZh: "网络可靠性",
+    summaryEn:
+      "A practical analysis of how repeatedly creating HTTP, gRPC, registry, configuration, and middleware SDK clients on hot paths can bypass connection reuse and trigger connection avalanches.",
+    tagsEn: ["Connection Reuse", "HTTP", "gRPC", "Middleware", "Client Lifecycle"],
+    readingDirectionEn:
+      "Read this when diagnosing connection storms, fallback-path client creation, HTTP client lifecycle issues, gRPC channel reuse problems, or middleware SDK resource churn."
+  },
+  {
     slug: "connect_reset_by_peer",
     titleEn:
       "Connection Reset by Peer: TCP RST, Connection Lifecycle, and Engineering Troubleshooting",
@@ -231,6 +244,19 @@ export const topics = [
     tagsEn: ["Linux", "task_struct", "Process Model", "Threads", "Kernel Scheduling"],
     readingDirectionEn:
       "Read this when studying Linux process and thread semantics, clone resource sharing, kernel scheduling entities, or the boundary between OS threads and user-mode lightweight threads."
+  },
+  {
+    slug: "fd",
+    titleEn:
+      "Linux File Descriptors: From Everything Is a File to fd Kernel Abstractions and Engineering Practice",
+    titleZh: "Linux 文件描述符研究：从“一切皆文件”到 fd 的内核抽象与工程实践",
+    categoryEn: "Operating Systems",
+    categoryZh: "操作系统",
+    summaryEn:
+      "A systematic study of Linux file descriptors, open file descriptions, VFS, inodes, sockets, epoll, inheritance semantics, and production engineering practices.",
+    tagsEn: ["Linux", "File Descriptor", "VFS", "epoll", "System Programming"],
+    readingDirectionEn:
+      "Read this when learning the Linux I/O model, troubleshooting fd leaks, understanding socket and epoll lifecycles, or designing resource governance for high-concurrency services."
   },
   {
     slug: "v_thread",
