@@ -156,6 +156,18 @@ export const topics = [
       "Read this when diagnosing throughput bottlenecks, designing a high-throughput data path, or planning coordinated optimization across network, memory, and storage layers."
   },
   {
+    slug: "zero_copy",
+    titleEn: "Linux Data Loading, Access, Transfer, and Zero-Copy Mechanisms",
+    titleZh: "Linux 系统中的数据加载、访问、传输与零拷贝机制研究",
+    categoryEn: "Performance Engineering",
+    categoryZh: "性能工程",
+    summaryEn:
+      "A study of Linux data access paths, virtual-to-physical memory mapping, page cache, task_struct, mm_struct, files_struct, address_space, and zero-copy techniques including Direct Memory, sendfile, and mmap plus write.",
+    tagsEn: ["Linux", "Zero Copy", "Page Cache", "mmap", "sendfile"],
+    readingDirectionEn:
+      "Read this when studying Linux data paths, page cache behavior, Java NIO transferTo, mmap, Direct Memory, or zero-copy performance experiments."
+  },
+  {
     slug: "protocol",
     titleEn: "Custom Application Protocols over TCP: Kafka, Redis, and MySQL as Case Studies",
     titleZh: "基于 TCP 的自定义应用层协议研究：以 Kafka、Redis、MySQL 为例",
@@ -216,6 +228,31 @@ export const topics = [
     tagsEn: ["epoll", "NIO", "Netty", "Go", "Virtual Threads"],
     readingDirectionEn:
       "Read this when studying the Linux NIO network model, Netty native epoll, Go runtime netpoll, Redis and Nginx event models, or the boundary between virtual threads and EventLoop."
+  },
+  {
+    slug: "netty_options",
+    titleEn:
+      "Netty Parameter Tuning: A Systematic Analysis Based on Symptoms, Option Semantics, and Official Documentation",
+    titleZh: "Netty 参数调优研究：基于问题现象、参数语义与官方文档的系统化分析",
+    categoryEn: "Java Engineering",
+    categoryZh: "Java 工程",
+    summaryEn:
+      "A systematic guide to Netty 4.1 tuning across connection establishment, read/write buffering, backpressure, thread models, memory allocation, keepalive, and Linux native transport, grounded in option semantics and observable symptoms.",
+    tagsEn: ["Netty", "Java", "Network Tuning", "Backpressure", "epoll"],
+    readingDirectionEn:
+      "Read this when diagnosing Netty connection spikes, small-packet latency, outbound buffer growth, EventLoop blocking, direct memory growth, or Linux native transport choices."
+  },
+  {
+    slug: "grpc_java",
+    titleEn: "gRPC Java's Netty-Based Layered Abstractions and Execution Model",
+    titleZh: "gRPC Java 基于 Netty 的分层封装与执行模型研究",
+    categoryEn: "Java Engineering",
+    categoryZh: "Java 工程",
+    summaryEn:
+      "A systematic study of how gRPC Java wraps Netty HTTP/2 transport with RPC abstractions such as Stub, Channel, Transport, Stream, Call, Interceptor, Listener, and Observer.",
+    tagsEn: ["gRPC Java", "Netty", "HTTP/2", "RPC", "StreamObserver"],
+    readingDirectionEn:
+      "Read this when studying the layering boundary between gRPC Java and Netty, the difference between Interceptor and ChannelHandler, RPC call lifecycles, or asynchronous streaming execution."
   },
   {
     slug: "tuning",
