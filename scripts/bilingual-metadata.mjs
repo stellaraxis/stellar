@@ -72,6 +72,42 @@ export const topics = [
       "Read this when standardizing telemetry conventions or defining platform-wide observability contracts."
   },
   {
+    slug: "prometheus",
+    titleEn: "Technical Comparison and Migration Guide for Prometheus and VictoriaMetrics",
+    titleZh: "Prometheus 与 VictoriaMetrics 的技术比较及迁移方法研究",
+    categoryEn: "Observability",
+    categoryZh: "可观测性",
+    summaryEn:
+      "A systematic comparison of Prometheus and VictoriaMetrics across system positioning, data ingestion, query compatibility, storage layout, performance mechanisms, and a standard migration path from Prometheus to VictoriaMetrics.",
+    tagsEn: ["Prometheus", "VictoriaMetrics", "PromQL", "Remote Write", "Observability"],
+    readingDirectionEn:
+      "Read this when evaluating Prometheus long-term storage, VictoriaMetrics replacement paths, vmagent/vmalert migration, PromQL compatibility, or large-scale time-series storage architecture."
+  },
+  {
+    slug: "opentelemetry_log",
+    titleEn: "Moving Beyond ELK Dependency: Redefining Log Governance in the OpenTelemetry Era",
+    titleZh: "告别 ELK 依赖？在 OpenTelemetry 时代重新定义日志治理",
+    categoryEn: "Observability",
+    categoryZh: "可观测性",
+    summaryEn:
+      "A study of log governance evolution from local files and ELK to OpenTelemetry, covering Java and Go logging SDK choices, Collector pipelines, Kafka buffering, gateway tradeoffs, and custom Collector engineering.",
+    tagsEn: ["OpenTelemetry", "Logs", "ELK", "Collector", "Kafka"],
+    readingDirectionEn:
+      "Read this when redesigning enterprise log governance, migrating from ELK-centric collection to OpenTelemetry, choosing Java or Go logging SDKs, or designing Collector-to-Kafka log pipelines."
+  },
+  {
+    slug: "acme_https",
+    titleEn: "Complete Guide to Enabling HTTPS with acme.sh and Nginx",
+    titleZh: "acme.sh + Nginx 接入 HTTPS 完整操作指南",
+    categoryEn: "Security Operations",
+    categoryZh: "安全运维",
+    summaryEn:
+      "A practical HTTPS setup guide based on a real stellhub.top rollout, covering acme.sh, Let's Encrypt, Nginx, HTTP-01 validation, certificate installation, automatic renewal, and common troubleshooting.",
+    tagsEn: ["HTTPS", "acme.sh", "Nginx", "Let's Encrypt", "TLS"],
+    readingDirectionEn:
+      "Read this when configuring HTTPS for a self-hosted website, blog, API gateway, or SaaS service, issuing Let's Encrypt certificates, or troubleshooting ACME HTTP-01 validation and Nginx TLS configuration."
+  },
+  {
     slug: "traces",
     titleEn: "Tracing Research for Large-Scale Enterprises",
     titleZh: "大型企业跨语言微服务链路追踪技术调研方案",
@@ -108,6 +144,19 @@ export const topics = [
       "Read this when evaluating build-vs-buy decisions or the long-term cost model of infrastructure platforms."
   },
   {
+    slug: "kafka_pulsar",
+    titleEn:
+      "Message Middleware Architecture Evolution in the Cloud-Native Era: Apache Kafka and Apache Pulsar",
+    titleZh: "云原生时代消息中间件架构演进研究：以 Apache Kafka 与 Apache Pulsar 为中心",
+    categoryEn: "Messaging Infrastructure",
+    categoryZh: "消息中间件",
+    summaryEn:
+      "A study of message middleware architecture evolution in the cloud-native era through Apache Kafka and Apache Pulsar, covering state organization, storage separation, multi-tenancy, containerization, and stateful system boundaries.",
+    tagsEn: ["Kafka", "Pulsar", "Message Queue", "Cloud Native", "Stateful Middleware"],
+    readingDirectionEn:
+      "Read this when comparing Kafka and Pulsar architectures, or evaluating whether middleware should become stateless, containerized, or separated into service and storage layers."
+  },
+  {
     slug: "distributed-consistency",
     titleEn: "Consistency Challenges in Distributed Systems",
     titleZh: "分布式系统中的一致性挑战及其解决路径",
@@ -130,6 +179,19 @@ export const topics = [
     tagsEn: ["Registry", "Discovery", "Distributed Systems", "Infrastructure"],
     readingDirectionEn:
       "Read this when evaluating service discovery patterns or studying registry-center implementation choices."
+  },
+  {
+    slug: "stellmap",
+    titleEn:
+      "Enterprise Registry Center Architecture, Core Design, and Self-Built Implementation Path: StellMap as an Example",
+    titleZh: "企业级注册中心的架构模型、核心设计与自研实现路径研究：以 StellMap 为例",
+    categoryEn: "Infrastructure Foundation",
+    categoryZh: "基础设施",
+    summaryEn:
+      "A systematic study of enterprise registry-center architecture, including service discovery, consistency models, storage, Watch, cross-region synchronization, operations, and the self-built StellMap implementation path.",
+    tagsEn: ["Registry Center", "Service Discovery", "Raft", "CAP", "StellMap"],
+    readingDirectionEn:
+      "Read this when comparing registry-center architectures, designing CP/AP service discovery, implementing Raft-backed service registries, or studying StellMap's modular implementation."
   },
   {
     slug: "sre",
