@@ -60,6 +60,18 @@ export const topics = [
       "Read this when diagnosing timeout failures, designing layered timeout models, or standardizing request deadlines across distributed services."
   },
   {
+    slug: "high_availability",
+    titleEn: "Typical Cases Where Local Performance Optimization Reduces System Availability",
+    titleZh: "局部性能优化导致系统可用性下降的典型案例分析",
+    categoryEn: "Service Reliability",
+    categoryZh: "服务可靠性",
+    summaryEn:
+      "A systematic analysis of how local optimizations around thread pools, timeouts, retries, caches, connection pools, aggregation APIs, async execution, read/write splitting, batching, local caches, rate limiting, releases, resource isolation, idempotency, and observability can reduce system-wide availability.",
+    tagsEn: ["High Availability", "Performance Optimization", "Fault Isolation", "Rate Limiting", "Idempotency"],
+    readingDirectionEn:
+      "Read this when reviewing high-concurrency or high-performance optimizations, defining reliability governance rules, evaluating load-test reports, performing incident reviews, planning canary releases, or setting capacity boundaries."
+  },
+  {
     slug: "observability-spec",
     titleEn: "Observability Specification",
     titleZh: "可观测规范",
@@ -380,6 +392,19 @@ export const topics = [
     tagsEn: ["Connection Reuse", "HTTP", "gRPC", "Middleware", "Client Lifecycle"],
     readingDirectionEn:
       "Read this when diagnosing connection storms, fallback-path client creation, HTTP client lifecycle issues, gRPC channel reuse problems, or middleware SDK resource churn."
+  },
+  {
+    slug: "connection_govern",
+    titleEn:
+      "Connection Governance for High-Concurrency Services: Connection Lifecycle, Troubleshooting, and Operations SOP",
+    titleZh: "如何做连接治理：面向高并发服务的连接生命周期、故障定位与运维 SOP 研究",
+    categoryEn: "Network Reliability",
+    categoryZh: "网络可靠性",
+    summaryEn:
+      "A systematic connection-governance guide for high-concurrency services, covering TCP, HTTP/gRPC, databases, connection pools, proxies, conntrack, file descriptors, lifecycle management, capacity models, timeout classification, CLOSE_WAIT, TIME_WAIT, and standardized troubleshooting SOPs.",
+    tagsEn: ["Connection Governance", "TCP", "Connection Pool", "CLOSE_WAIT", "TIME_WAIT", "SOP"],
+    readingDirectionEn:
+      "Read this when handling excessive connection counts, connection timeouts, exhausted pools, CLOSE_WAIT or TIME_WAIT buildup, database Too many connections errors, full conntrack tables, or file descriptor exhaustion."
   },
   {
     slug: "connect_reset_by_peer",
