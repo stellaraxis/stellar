@@ -245,6 +245,18 @@ export const topics = [
       "Read this when comparing consistency strategies or selecting a reliability model for cross-service workflows."
   },
   {
+    slug: "transaction",
+    titleEn: "Transaction Consistency Governance in Microservice Architecture",
+    titleZh: "微服务架构下事务一致性治理的客观分析",
+    categoryEn: "Distributed Systems",
+    categoryZh: "分布式系统",
+    summaryEn:
+      "An objective analysis of why modern microservices no longer default to traditional strong distributed transactions, covering XA, 2PC, Saga, TCC, local message tables, Transactional Outbox, idempotency, domain boundaries, and reconciliation.",
+    tagsEn: ["Distributed Transactions", "Microservices", "Saga", "TCC", "Eventual Consistency"],
+    readingDirectionEn:
+      "Read this when designing cross-service consistency, evaluating XA or 2PC costs, choosing Saga or TCC, governing database-and-message dual writes, or refactoring microservice transaction boundaries."
+  },
+  {
     slug: "distributed-system-registry-centers",
     titleEn: "Registry Centers in Distributed Systems",
     titleZh: "分布式系统注册中心意义、问题与主流实现",
@@ -329,6 +341,18 @@ export const topics = [
     tagsEn: ["AI Applications", "Compute Economy", "Cost Governance", "AI Gateway", "Context Engineering"],
     readingDirectionEn:
       "Read this when evaluating AI-enabled product strategy, model routing, cost governance, context infrastructure, or pricing models for internet applications."
+  },
+  {
+    slug: "bulk",
+    titleEn: "Reconstructing Bucket Theory in the AI Era: From Fixing Weaknesses to Strong-Plank Collaboration",
+    titleZh: "AI 时代下木桶理论的重构",
+    categoryEn: "AI Engineering",
+    categoryZh: "AI 工程",
+    summaryEn:
+      "A study of how generative AI changes the boundaries of bucket theory, arguing from division-of-labor theory, AI labor-impact research, and AI risk governance that AI is better used to amplify strong planks than to fully replace weak ones.",
+    tagsEn: ["Generative AI", "Bucket Theory", "Division of Labor", "Super Individual", "Super Team"],
+    readingDirectionEn:
+      "Read this when thinking about AI's impact on personal capability models, team division of labor, organizational efficiency, skill reconstruction, and the relationship between super individuals and super teams."
   },
   {
     slug: "java-serialization",
