@@ -1,0 +1,35 @@
+{
+  "slug": "resource-govern",
+  "title": {
+    "en": "Enterprise Server and SSD Resource-Saving Paths: An Objective Analysis Based on Official Technical Documentation",
+    "zh": "企业服务器与 SSD 资源节约路径研究：基于官方技术文档的客观分析"
+  },
+  "category": {
+    "en": "Platform Strategy",
+    "zh": "平台战略"
+  },
+  "summary": {
+    "en": "An objective summary of technical paths for saving enterprise server and SSD resources across rightsizing, autoscaling, Kubernetes resource boundaries, discard/TRIM, container cleanup, and database space maintenance.",
+    "zh": "基于云平台、Kubernetes、Linux、Docker 与主流数据库官方机制，客观归纳企业节省服务器资源与 SSD 资源的技术路径。"
+  },
+  "tags": {
+    "en": [
+      "Resource Governance",
+      "Cost Optimization",
+      "Kubernetes",
+      "SSD",
+      "Platform Engineering"
+    ],
+    "zh": [
+      "资源治理",
+      "成本优化",
+      "Kubernetes",
+      "SSD",
+      "平台工程"
+    ]
+  },
+  "readingDirection": {
+    "en": "Read this when building resource governance rules for cloud servers, Kubernetes workloads, SSD volumes, container nodes, and database storage.",
+    "zh": "适合在设计云服务器、Kubernetes 工作负载、SSD 卷、容器节点与数据库存储的资源治理规则时阅读。"
+  }
+}

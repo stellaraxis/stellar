@@ -1,0 +1,35 @@
+{
+  "slug": "java&go",
+  "title": {
+    "en": "From Slices to Objects: Structural Differences in Go and Java Memory Usage Models",
+    "zh": "从切片到对象：Go 与 Java 内存使用模型的结构性差异"
+  },
+  "category": {
+    "en": "Service Governance",
+    "zh": "服务治理"
+  },
+  "summary": {
+    "en": "A comparative analysis of how Go and Java differ in data representation, arrays, slices, object layout, parameter passing, escape analysis, GC, runtime design, and engineering tradeoffs.",
+    "zh": "围绕 Go 与 Java 的内存使用模型，分析二者在数据表示、数组、切片、对象模型、函数传参、逃逸分析、GC 与运行时能力上的结构性差异。"
+  },
+  "tags": {
+    "en": [
+      "Go",
+      "Java",
+      "Memory Model",
+      "Runtime",
+      "GC"
+    ],
+    "zh": [
+      "Go",
+      "Java",
+      "内存模型",
+      "运行时",
+      "GC"
+    ]
+  },
+  "readingDirection": {
+    "en": "Read this when comparing Go and Java for infrastructure services, memory-sensitive workloads, or runtime-level engineering tradeoffs.",
+    "zh": "适合在比较 Go 与 Java 的基础设施服务选型、内存敏感场景和运行时工程取舍时阅读。"
+  }
+}
