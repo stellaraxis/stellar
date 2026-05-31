@@ -1,0 +1,35 @@
+{
+  "slug": "open-api",
+  "title": {
+    "en": "Research on Standard Design Methods for Open APIs",
+    "zh": "Open API 标准设计方式研究"
+  },
+  "category": {
+    "en": "Service Governance",
+    "zh": "服务治理"
+  },
+  "summary": {
+    "en": "A systematic study of Open API design for enterprise infrastructure platforms, covering HTTP semantics, OpenAPI Specification 3.1.1, security, authorization, quota and rate limiting, gateway architecture, business reuse, observability, and performance optimization.",
+    "zh": "面向大型企业基础架构平台，系统研究 Open API 的 HTTP 语义、OpenAPI Specification 3.1.1、安全认证、授权、配额限流、网关架构、业务复用、可观测性与性能优化。"
+  },
+  "tags": {
+    "en": [
+      "Open API",
+      "OpenAPI Specification",
+      "API Gateway",
+      "OAuth 2.0",
+      "Observability"
+    ],
+    "zh": [
+      "Open API",
+      "OpenAPI Specification",
+      "API 网关",
+      "OAuth 2.0",
+      "可观测性"
+    ]
+  },
+  "readingDirection": {
+    "en": "Read this when designing external APIs, OpenAPI contracts, API gateways, OAuth-based authorization, tenant quotas, rate limiting, observability, and performance governance for enterprise platforms.",
+    "zh": "适合在为企业平台设计外部开放接口、OpenAPI 契约、API 网关、OAuth 授权、租户配额、限流、可观测性与性能治理时阅读。"
+  }
+}
